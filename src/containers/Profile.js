@@ -2,12 +2,16 @@ import React, { Component } from 'react';
 import PhotoDisplay from '../components/PhotoDisplay';
 import Navbar from './Navbar';
 import '../css/Profile.css';
-import clock from '../img/clock.png';
-import grid from '../img/grid.png';
+import square from '../img/square.jpg';
+import hall from '../img/hall.jpg';
+import nw from '../img/nw.jpg';
+import starrynight from '../img/starrynight.png';
+import tiger from '../img/tiger.png';
+import shell from '../img/shell.png';
 
 // temp photo arrays
-let photos = [{img: clock, text: 'clock'}, {img: grid, text: 'grid'}];
-let wallpapers = [{img: grid, text: 'grid'}]
+let photos = [{img: square, text: 'square'}, {img: hall, text: 'hall'}, {img: nw, text: 'nw'}];
+let wallpapers = [{img: starrynight, text: 'starrynight'}, {img: tiger, text: 'tiger'}, {img: shell, text: 'shell'}]
 
 class Profile extends Component {
     constructor(props) {
