@@ -11,7 +11,7 @@ class PhotoDisplay extends Component {
         }
         let i = 0;
         return (
-            <div>
+            <div id = "photos">
             {this.props.photos.map(p => {
                 return (<div key={i++}>
                     <img src={p.img} alt={p.text} />

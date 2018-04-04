@@ -5,12 +5,19 @@ import '../css/Profile.css';
 import square from '../img/square.jpg';
 import hall from '../img/hall.jpg';
 import nw from '../img/nw.jpg';
+import students from '../img/students.jpg';
+import quincy from '../img/quincy.jpg';
+import bridge from '../img/bridge.jpg';
+import grad from '../img/grad.jpg';
+import adams from '../img/adams.jpg';
 import starrynight from '../img/starrynight.png';
 import tiger from '../img/tiger.png';
 import shell from '../img/shell.png';
 
 // temp photo arrays
-let photos = [{img: square, text: 'square'}, {img: hall, text: 'hall'}, {img: nw, text: 'nw'}];
+let photos = [{img: square, text: 'square'}, {img: hall, text: 'hall'}, {img: nw, text: 'nw'}, 
+    {img: students, text: 'students'}, {img: quincy, text: 'quincy'}, {img: bridge, text: 'bridge'}, 
+    {img: grad, text: 'grad'}, {img: adams, text: 'adams'}];
 let wallpapers = [{img: starrynight, text: 'starrynight'}, {img: tiger, text: 'tiger'}, {img: shell, text: 'shell'}]
 
 class Profile extends Component {
@@ -38,8 +45,8 @@ class Profile extends Component {
         return (
             <div>
                 <div className='profile-header'>
-                    <button name="photos" onClick={this.handleClick}>Your Photos</button>
-                    <button name="wallpapers" onClick={this.handleClick}>Your Wallpapers</button>
+                    <button className="photos" onClick={this.handleClick}>YOUR PHOTOS</button>
+                    <button className="wallpapers" onClick={this.handleClick}>YOUR WALLPAPERS</button>
                 </div>
                 <PhotoDisplay photos={this.state.showWallpapers ? wallpapers : photos} />
                 <Navbar state='profile' />
