@@ -1,0 +1,58 @@
+.image-view {
+    position: absolute;
+    z-index: -1;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+}
+
+.image-view > img {
+    width: 100%;
+    height: 98%;
+}
+
+.return-btn {
+    position: fixed;
+    left: 48%;
+    border: none;
+    background-color: transparent;
+    width: 4%;
+}
+
+.return-btn-img {
+    width: 100%;
+    min-width: 20px;
+}
+
+.home-btns {
+    display: flex;
+    flex-flow: column nowrap;
+    align-items: center;
+}
+
+.camera-btn {
+    width: 5%;
+    position: absolute;
+    bottom: 0;
+    padding: 1%;
+}
+
+.photo-header {
+    position: absolute;
+    top: 2%;
+    width: 98%;
+    display: flex;
+    justify-content: space-between;
+}
+
+.photo-header > button {
+    border: none;
+    background-color: transparent;
+    width: 3%;
+    font-size: 20px;
+}
+
+.arrow-btn-img {
+    width: 100%;
+}
