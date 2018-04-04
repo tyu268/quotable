@@ -45,8 +45,8 @@ class Profile extends Component {
         return (
             <div>
                 <div className='profile-header'>
-                    <button className="photos" onClick={this.handleClick}>YOUR PHOTOS</button>
-                    <button className="wallpapers" onClick={this.handleClick}>YOUR WALLPAPERS</button>
+                    <button name="photos" className="photos" onClick={this.handleClick}>YOUR PHOTOS</button>
+                    <button name="wallpapers" className="wallpapers" onClick={this.handleClick}>YOUR WALLPAPERS</button>
                 </div>
                 <PhotoDisplay photos={this.state.showWallpapers ? wallpapers : photos} />
                 <Navbar state='profile' />
