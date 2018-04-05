@@ -1,7 +1,7 @@
 # quotable
 CS179 Project 2  
 Team TemporoParietal Junction: Tiffany Yu, Phillip Huang, Joy Li  
-Found live here: [ADD LINK]
+Found live here: https://philliphuang.github.io/quotable/
 
 ## Setup
 This web app uses React and React Redux. First, clone the repository. Then, to install the dependencies, run
