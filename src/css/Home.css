@@ -38,6 +38,10 @@
     padding: 1%;
 }
 
+.photo-screen {
+    width: 100%;
+}
+
 .photo-header {
     position: absolute;
     top: 2%;
@@ -55,4 +59,12 @@
 
 .arrow-btn-img {
     width: 100%;
+}
+
+.photo-footer {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    display: flex;
+    justify-content: center;
 }

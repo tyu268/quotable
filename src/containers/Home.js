@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux'
 import { changeScreen } from '../actions'
 import QuoteModal from './QuoteModal';
+import MoodPicker from '../components/MoodPicker';
 import '../css/Home.css';
 import placeholder from '../img/image-placeholder.png';
 import camera_button from '../img/camera_button.png';
@@ -62,13 +63,17 @@ class Home extends Component {
                         <div className="home-btns">
                             {!this.state.cur_picture
                                 ? <img className="camera-btn" src={camera_button} alt="camera" onClick={this.handleCameraClick} />
-                                : <div className="photo-header">
-                                    <button className="cancel-btn" onClick={this.handleCancel}>X</button>
-                                    <button className="arrow-btn" onClick={this.handleContinue}>
-                                        <img className="arrow-btn-img" src={arrow_right} alt="next" />
-                                    </button>
-                                </div>
-                                /* ADD MOOD HERE */
+                                : <div className="photo-screen">
+                                    <div className="photo-header">
+                                        <button className="cancel-btn" onClick={this.handleCancel}>X</button>
+                                        <button className="arrow-btn" onClick={this.handleContinue}>
+                                            <img className="arrow-btn-img" src={arrow_right} alt="next" />
+                                        </button>
+                                    </div>
+                                    <div className="photo-footer">
+                                        <MoodPicker />
+                                    </div>
+                                  </div>
                             }
                         </div>
                     </div>}
