@@ -1,6 +1,3 @@
 .mood-btn {
-    width: 5%;
-    position: absolute;
-    bottom: 0;
-    padding: 1%;
+    font-size: 2em;
 }

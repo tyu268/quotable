@@ -4,7 +4,14 @@ import '../css/MoodPicker.css';
 class MoodPicker extends Component {
     render() {
         return (
-            <button className='mood-btn'>😀</button>
+            <div>
+                <button className='mood-btn'>😀</button>
+                <button className='mood-btn'>😞</button>
+                <button className='mood-btn'>😡</button>
+                <button className='mood-btn'>😱</button>
+                <button className='mood-btn'>🤢</button>
+                <button className='mood-btn'>🍕</button>
+            </div>
         );
     }
 }
