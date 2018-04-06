@@ -25,6 +25,13 @@ class MoodPicker extends Component {
                 selected: new_emotion,
             };
         });
+
+        // new emotion assigned
+        if (new_emotion) {
+            this.setState(prevState => {
+                return {};
+            });
+        } 
     }
 
     render() {
@@ -32,13 +39,20 @@ class MoodPicker extends Component {
                 <div>
                     {this.state.expand
                         ? // Expanded picker
-                            this.state.emotions.map(emotion => {
-                                return (
-                                    <button className='mood-btn' onClick={() => this.toggleExpand(emotion)}>
-                                        <span role="img" aria-label={emotion[1]}>{emotion[0]}</span>
-                                    </button>
-                                );
-                            })
+                            <div>
+                                {
+                                    this.state.emotions.map(emotion => {
+                                        return (
+                                            <button className='mood-btn' onClick={() => this.toggleExpand(emotion)}>
+                                                <span role="img" aria-label={emotion[1]}>{emotion[0]}</span>
+                                            </button>
+                                        );
+                                    })
+                                }
+                                <button className='mood-btn' onClick={() => this.toggleExpand(this.state.selected)}>
+                                    X
+                                </button>
+                            </div>
                         
                         : // Closed picker
                             <button className='mood-btn' onClick={() => this.toggleExpand(this.state.selected)}>
