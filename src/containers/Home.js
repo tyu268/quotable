@@ -28,12 +28,14 @@ class Home extends Component {
         this.webcam = webcam;
     }
 
+    // Switch from quote to camera
     handleArrowClick() {
         this.setState(prevState => {
             return {show_quote: !prevState.show_quote};
         });
     }
 
+    // Take photo
     handleCameraClick() {
         const imageSrc = this.webcam.getScreenshot();
         this.setState(prevState => {
@@ -41,6 +43,7 @@ class Home extends Component {
         });
     }
 
+    // Cancel current photo
     handleCancel() {
         this.setState(prevState => {
             return {cur_picture: null};
@@ -64,8 +67,14 @@ class Home extends Component {
                         ref={this.setRef}
                         screenshotFormat="image/jpeg"/>}
                 {this.state.show_quote
+
+                    /* Quote */
                     ? <QuoteModal handleClick={this.handleArrowClick} />
+
+                    /* Camera */
                     : <div>
+
+                        {/* Return to quote arrow */}
                         <button className="return-btn">
                             <img 
                                 className="return-btn-img"
@@ -73,9 +82,14 @@ class Home extends Component {
                                 src={arrow_down}
                                 alt="back to quote" />
                         </button>
+
                         <div className="home-btns">
                             {!this.state.cur_picture
+
+                                /* Camera Button */
                                 ? <img className="camera-btn" src={camera_button} alt="camera" onClick={this.handleCameraClick} />
+
+                                /* Photo Taken */
                                 : <div className="photo-screen">
                                     <div className="photo-header">
                                         <button className="cancel-btn" onClick={this.handleCancel}>X</button>
