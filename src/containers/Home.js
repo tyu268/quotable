@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import Webcam from 'react-webcam';
 import { connect } from 'react-redux'
 import { changeScreen } from '../actions'
 import QuoteModal from './QuoteModal';
@@ -16,10 +17,15 @@ class Home extends Component {
             show_quote: true,
             cur_picture: null
         };
+        this.setRef = this.setRef.bind(this);
         this.handleArrowClick = this.handleArrowClick.bind(this);
         this.handleCameraClick = this.handleCameraClick.bind(this);
         this.handleCancel = this.handleCancel.bind(this);
         this.handleContinue = this.handleContinue.bind(this);
+    }
+
+    setRef(webcam) {
+        this.webcam = webcam;
     }
 
     handleArrowClick() {
@@ -29,8 +35,9 @@ class Home extends Component {
     }
 
     handleCameraClick() {
+        const imageSrc = this.webcam.getScreenshot();
         this.setState(prevState => {
-            return {cur_picture: 1};
+            return { cur_picture: imageSrc };
         });
     }
 
@@ -47,9 +54,15 @@ class Home extends Component {
     render() {
         return (
             <div className="home">
-                <div className="image-view">
-                    <img src={placeholder} alt="view" />
-                </div>
+                {this.state.cur_picture
+                    ? <div className="image-view">
+                        <img src={this.state.cur_picture} alt="current picture"/>
+                    </div>
+                    : <Webcam
+                        className="video-view"
+                        audio={false}
+                        ref={this.setRef}
+                        screenshotFormat="image/jpeg"/>}
                 {this.state.show_quote
                     ? <QuoteModal handleClick={this.handleArrowClick} />
                     : <div>
