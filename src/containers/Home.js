@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import Webcam from 'react-webcam';
 import { connect } from 'react-redux'
-import { changeScreen } from '../actions'
+import { changeScreen, addPhoto } from '../actions'
 import QuoteModal from './QuoteModal';
 import MoodPicker from '../components/MoodPicker';
 import '../css/Home.css';
@@ -51,6 +51,7 @@ class Home extends Component {
     }
 
     handleContinue() {
+        this.props.dispatch(addPhoto(this.state.cur_picture, 'new picture'));
         this.props.dispatch(changeScreen('explore'));
     }
 
@@ -59,7 +60,7 @@ class Home extends Component {
             <div className="home">
                 {this.state.cur_picture
                     ? <div className="image-view">
-                        <img src={this.state.cur_picture} alt="current picture"/>
+                        <img src={this.state.cur_picture} alt="current"/>
                     </div>
                     : <Webcam
                         className="video-view"
