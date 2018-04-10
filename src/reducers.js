@@ -28,6 +28,7 @@ let explore_temp = [{img: annenberg, text: 'annenberg'}, {img: gate, text: 'gate
 
 const initialState = {
     screen: 'home',
+    curPic: null,
     yourPhotos: JSON.stringify(photos_temp),
     yourWallpapers: JSON.stringify(wallpapers_temp),
     explorePhotos: JSON.stringify(explore_temp)
@@ -36,14 +37,15 @@ const initialState = {
 function reducer(state = initialState, action) {
     switch (action.type) {
         case 'CHANGE_SCREEN':
-            console.log('changing screen! ' + action.screen);
             return Object.assign({}, state, {
                 screen: action.screen
             });
 
         case 'ADD_PHOTO':
             let newImage = { img: action.src, text: action.text };
-            const newState = { ...state }
+            const newState = Object.assign({}, state, {
+                curPic: newImage
+            });
             let photos = JSON.parse(newState.yourPhotos)
             let explore = JSON.parse(newState.explorePhotos)
             photos.splice(0, 0, newImage);

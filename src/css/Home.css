@@ -32,7 +32,6 @@
     width: 2em;
     padding: 1em 0em;
     z-index: 1;
-    filter: invert(1);
 }
 
 .return-btn-img {
@@ -87,4 +86,57 @@
     width: 100%;
     display: flex;
     justify-content: center;
+}
+
+.modal-confirm {
+    position: fixed;
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    border: 1px solid black;
+}
+
+.modal-confirm-content {
+    display: flex;
+    flex-flow: column nowrap;
+    align-items: center;
+    border-radius: 5px;
+    width: 12em;
+    background-color: #eeeeee;
+}
+
+.modal-confirm-content > h6 {
+    width: 100%;
+    margin: 1em 1em 0.5em 1em;
+    text-align: center;
+    color: black;
+    font-size: 1em;
+}
+
+.modal-confirm-content > p {
+    width: 100%;
+    margin: 0.6em;
+    text-align: center;
+    font-size: 0.8em;
+    color: black;
+}
+
+.modal-confirm-btns {
+    display: flex;
+    flex-flow: row nowrap;
+    margin-top: 0.5em;
+    width: 100%;
+    justify-content: space-around;
+}
+
+.modal-confirm-btns > button {
+    border: 1px solid #eeeeee;
+    border-radius: 5px;
+    background-color: #cccccc;
+    flex: 1;
+    font-size: 0.8em;
+    padding: 0.3em;
 }

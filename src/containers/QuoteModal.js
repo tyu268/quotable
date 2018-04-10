@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux'
 import { changeScreen } from '../actions'
+import MoodPicker from '../components/MoodPicker';
 import '../css/QuoteModal.css';
 import clock from '../img/clock.png';
 import photo_img from '../img/photos.png';
@@ -24,44 +25,54 @@ class QuoteModal extends Component {
 
     render() {
         return (
-            <div className="quote-modal">
-                <div className="quote-text">
-                    Negative thoughts stick around because we believe them, not because we want or choose them.
-                </div>
-                <div className="time">
-                    <img className="time-img" src={clock} alt="time left" />
-                    <div className="time-text">
-                        5 hours left!
+            <div>
+                <div className="quote-modal">
+                    <div className="quote-text">
+                        Negative thoughts stick around because we believe them, not because we want or choose them.
+                    </div>
+                    <div className="time">
+                        <img className="time-img" src={clock} alt="time left" />
+                        <div className="time-text">
+                            5 hours left!
+                        </div>
+                    </div>
+                    <div className="footer">
+                        <div className="footer-ctr">
+                            <img
+                                name='profile'
+                                className="footer-img-photo"
+                                src={photo_img}
+                                alt="your profile"
+                                onClick={this.handleScreenClick} />
+                        </div>
+                        {!this.props.curPic &&
+                        <div className="footer-ctr">
+                            <img
+                                className="footer-img-arrow"
+                                src={arrow_up}
+                                alt="camera"
+                                onClick={this.handleCameraClick} />
+                        </div>}
+                        <div className="footer-ctr">
+                            <img 
+                                name='explore'
+                                className="footer-img-grid"
+                                src={grid}
+                                alt="explore"
+                                onClick={this.handleScreenClick} />
+                        </div>
                     </div>
                 </div>
-                <div className="footer">
-                    <div className="footer-ctr">
-                        <img
-                            name='profile'
-                            className="footer-img-photo"
-                            src={photo_img}
-                            alt="your profile"
-                            onClick={this.handleScreenClick} />
-                    </div>
-                    <div className="footer-ctr">
-                        <img
-                            className="footer-img-arrow"
-                            src={arrow_up}
-                            alt="camera"
-                            onClick={this.handleCameraClick} />
-                    </div>
-                    <div className="footer-ctr">
-                        <img 
-                            name='explore'
-                            className="footer-img-grid"
-                            src={grid}
-                            alt="explore"
-                            onClick={this.handleScreenClick} />
-                    </div>
-                </div>
+                <MoodPicker />
             </div>
         );
     }
 }
 
-export default connect()(QuoteModal);
+const mapStateToProps = (state) => {
+    return {
+        curPic: state.curPic
+    };
+}
+
+export default connect(mapStateToProps)(QuoteModal);

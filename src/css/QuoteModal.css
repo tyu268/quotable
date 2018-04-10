@@ -5,7 +5,7 @@
     top: 0;
     left: 0;
     background-color: black;
-    opacity: 0.8;
+    opacity: 0.6;
     display: flex;
     flex-flow: column nowrap;
     align-items: center;
@@ -29,12 +29,14 @@
     flex-flow: column nowrap;
     align-items: center;
     margin: 2%;
+    opacity: 1;
 }
 
 .time-text {
     font-family: Arial;
     font-size: 0.8em;
     color: white;
+    opacity: 1;
 }
 
 .time > img {
