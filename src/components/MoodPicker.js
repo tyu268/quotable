@@ -47,7 +47,7 @@ class MoodPicker extends Component {
                                 {
                                     this.state.emotions.map(emotion => {
                                         return (
-                                            <button className='mood-btn' onClick={() => this.toggleExpand(emotion)}>
+                                            <button key={emotion[1]} className='mood-btn' onClick={() => this.toggleExpand(emotion)}>
                                                 <span role="img" aria-label={emotion[1]}>{emotion[0]}</span>
                                             </button>
                                         );
