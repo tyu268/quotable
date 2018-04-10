@@ -43,13 +43,13 @@ class QuoteModal extends Component {
                             alt="your profile"
                             onClick={this.handleScreenClick} />
                     </div>
-                    <div className="footer-ctr">
+                    {!this.props.curPic && <div className="footer-ctr">
                         <img
                             className="footer-img-arrow"
                             src={arrow_up}
                             alt="camera"
                             onClick={this.handleCameraClick} />
-                    </div>
+                    </div>}
                     <div className="footer-ctr">
                         <img 
                             name='explore'
@@ -64,4 +64,10 @@ class QuoteModal extends Component {
     }
 }
 
-export default connect()(QuoteModal);
+const mapStateToProps = (state) => {
+    return {
+        curPic: state.curPic
+    };
+}
+
+export default connect(mapStateToProps)(QuoteModal);

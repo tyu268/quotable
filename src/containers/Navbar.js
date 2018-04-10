@@ -25,7 +25,6 @@ class Navbar extends Component {
         } else if (screen === 'explore') {
             exploreClass += ' cur-page';
         }
-        console.log(`${profileClass}, ${exploreClass}`);
         return (
             <div className='navbar'>
                 <div className={profileClass} data-name='profile' onClick={this.handleClick}>
