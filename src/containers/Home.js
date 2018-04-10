@@ -3,7 +3,6 @@ import Webcam from 'react-webcam';
 import { connect } from 'react-redux'
 import { changeScreen, addPhoto } from '../actions'
 import QuoteModal from './QuoteModal';
-import MoodPicker from '../components/MoodPicker';
 import '../css/Home.css';
 import camera_button from '../img/camera_button.png';
 import checkmark from '../img/checkmark.png';
@@ -100,7 +99,9 @@ class Home extends Component {
                             {!this.state.cur_picture
 
                                 /* Camera Button */
-                                ? <img className="camera-btn" src={camera_button} alt="camera" onClick={this.handleCameraClick} />
+                                ? <div>
+                                    <img className="camera-btn" src={camera_button} alt="camera" onClick={this.handleCameraClick} />
+                                  </div>
 
                                 /* Photo Taken */
                                 : <div className="photo-screen">
@@ -111,7 +112,6 @@ class Home extends Component {
                                         </button>
                                     </div>
                                     <div className="photo-footer">
-                                        <MoodPicker />
                                     </div>
                                   </div>
                             }
