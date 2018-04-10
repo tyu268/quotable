@@ -30,7 +30,6 @@ class QuoteModal extends Component {
                     <div className="quote-text">
                         Negative thoughts stick around because we believe them, not because we want or choose them.
                     </div>
-<<<<<<< HEAD
                     <div className="time">
                         <img className="time-img" src={clock} alt="time left" />
                         <div className="time-text">
@@ -46,13 +45,14 @@ class QuoteModal extends Component {
                                 alt="your profile"
                                 onClick={this.handleScreenClick} />
                         </div>
+                        {!this.props.curPic &&
                         <div className="footer-ctr">
                             <img
                                 className="footer-img-arrow"
                                 src={arrow_up}
                                 alt="camera"
                                 onClick={this.handleCameraClick} />
-                        </div>
+                        </div>}
                         <div className="footer-ctr">
                             <img 
                                 name='explore'
@@ -61,22 +61,6 @@ class QuoteModal extends Component {
                                 alt="explore"
                                 onClick={this.handleScreenClick} />
                         </div>
-=======
-                    {!this.props.curPic && <div className="footer-ctr">
-                        <img
-                            className="footer-img-arrow"
-                            src={arrow_up}
-                            alt="camera"
-                            onClick={this.handleCameraClick} />
-                    </div>}
-                    <div className="footer-ctr">
-                        <img 
-                            name='explore'
-                            className="footer-img-grid"
-                            src={grid}
-                            alt="explore"
-                            onClick={this.handleScreenClick} />
->>>>>>> origin/master
                     </div>
                 </div>
                 <MoodPicker />
