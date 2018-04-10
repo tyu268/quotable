@@ -5,7 +5,6 @@ import { changeScreen, addPhoto } from '../actions'
 import QuoteModal from './QuoteModal';
 import MoodPicker from '../components/MoodPicker';
 import '../css/Home.css';
-import placeholder from '../img/image-placeholder.png';
 import camera_button from '../img/camera_button.png';
 import arrow_right from '../img/arrow-right.png';
 import arrow_down from '../img/arrow-down.png';
