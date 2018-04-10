@@ -62,7 +62,7 @@ class Home extends Component {
                         <img src={this.state.cur_picture} alt="current"/>
                     </div>
                     : <Webcam
-                        className="video-view"
+                        className="image-view"
                         audio={false}
                         ref={this.setRef}
                         screenshotFormat="image/jpeg"/>}

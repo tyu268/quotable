@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux'
 import PhotoDisplay from '../components/PhotoDisplay';
 import Navbar from './Navbar';
+import '../css/index.css';
 import '../css/Profile.css';
 
 class Profile extends Component {

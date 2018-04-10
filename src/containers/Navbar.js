@@ -13,27 +13,35 @@ class Navbar extends Component {
     }
 
     handleClick(ev) {
-        this.props.dispatch(changeScreen(ev.target.name));
+        this.props.dispatch(changeScreen(ev.target.dataset.name));
     }
 
     render() {
-        let screen = this.props.state;
+        const screen = this.props.state;
+        let profileClass = 'navbar-icon';
+        let exploreClass = 'navbar-icon';
+        if (screen === 'profile') {
+            profileClass += ' cur-page';
+        } else if (screen === 'explore') {
+            exploreClass += ' cur-page';
+        }
+        console.log(`${profileClass}, ${exploreClass}`);
         return (
             <div className='navbar'>
-                <div className='navbar-icon' onClick={this.handleClick}>
+                <div className={profileClass} data-name='profile' onClick={this.handleClick}>
                     <img
-                        className={screen === 'profile' ? 'navbar-page' : ''}
-                        name='profile'
+                        className={screen === 'profile' ? 'cur-page' : ''}
+                        data-name='profile'
                         src={photo_img}
                         alt='your profile' />
                 </div>
-                <div className='navbar-icon' name='home' onClick={this.handleClick}>
-                    <img src={home} alt='home' name='home'/>
+                <div className='navbar-icon' data-name='home' onClick={this.handleClick}>
+                    <img src={home} alt='home' data-name='home'/>
                 </div>
-                <div className='navbar-icon' name='explore' onClick={this.handleClick}>
+                <div className={exploreClass} data-name='explore' onClick={this.handleClick}>
                     <img
-                        className={screen === 'explore' ? 'navbar-page' : ''}
-                        name='explore'
+                        className={screen === 'explore' ? 'cur-page' : ''}
+                        data-name='explore'
                         src={grid}
                         alt='explore' />
                 </div>
