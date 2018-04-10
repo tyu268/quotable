@@ -5,7 +5,7 @@ class MoodPicker extends Component {
      constructor(props) {
         super(props);
         this.state = {
-            expand: false,
+            expand: true,
             selected: ['😶', 'neutral'],
             emotions: [
                 ['😄', 'happy'],
