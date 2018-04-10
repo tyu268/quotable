@@ -3,6 +3,7 @@ import { connect } from 'react-redux'
 import Home from './Home';
 import Profile from './Profile';
 import Explore from './Explore';
+import Tutorial from './Tutorial';
 
 class Main extends Component {
     render() {
@@ -14,6 +15,7 @@ class Main extends Component {
                     : screen === 'explore'
                         ? <Explore />
                         : <Home />}
+                <Tutorial />
             </div>
         );
     }
