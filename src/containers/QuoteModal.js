@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux'
 import { changeScreen } from '../actions'
 import MoodPicker from '../components/MoodPicker';
-import Navbar from './Navbar';
+import Navbar from '../components/Navbar';
 import '../css/QuoteModal.css';
 import clock from '../img/clock.png';
 import photo_img from '../img/photos.png';

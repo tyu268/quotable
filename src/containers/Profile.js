@@ -3,7 +3,7 @@ import { connect } from 'react-redux'
 import PhotoQuoteView from '../components/PhotoQuoteView';
 import ImageView from '../components/ImageView';
 import EmojiHistory from '../components/EmojiHistory';
-import Navbar from './Navbar';
+import Navbar from '../components/Navbar';
 import '../css/index.css';
 import '../css/Profile.css';
 

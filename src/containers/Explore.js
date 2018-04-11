@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import PhotoDisplay from '../components/PhotoDisplay';
-import Navbar from './Navbar';
+import Navbar from '../components/Navbar';
 import '../css/index.css';
 import '../css/Explore.css';
 
