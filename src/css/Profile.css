@@ -17,6 +17,10 @@
 	font-size: 1em;
 }
 
+.profile-header > button:focus {
+	outline:0;
+}
+
 .photo-views {
 	margin: 3.5em 0 3em;
 }
