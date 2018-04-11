@@ -1,14 +1,9 @@
 import square from './img/square.jpg';
 import hall from './img/hall.jpg';
-import nw from './img/nw.jpg';
 import students from './img/students.jpg';
-import quincy from './img/quincy.jpg';
-import bridge from './img/bridge.jpg';
-import grad from './img/grad.jpg';
 import adams from './img/adams.jpg';
 import starrynight from './img/starrynight.png';
 import tiger from './img/tiger.png';
-import shell from './img/shell.png';
 import annenberg from './img/annenberg.jpg';
 import gate from './img/gate.jpg';
 import yard from './img/yard.jpg';
@@ -16,21 +11,36 @@ import matthews from './img/matthews.jpeg';
 import manny from './img/manny.jpg';
 import housing from './img/housing.jpg';
 import housing2 from './img/housing2.jpg';
+import placeholder from './img/image-placeholder.png';
 
 // temp photo arrays
-let photos_temp = [{img: square, text: 'square'}, {img: hall, text: 'hall'}, {img: nw, text: 'nw'}, 
-    {img: students, text: 'students'}, {img: quincy, text: 'quincy'}, {img: bridge, text: 'bridge'}, 
-    {img: grad, text: 'grad'}, {img: adams, text: 'adams'}];
-let wallpapers_temp = [{img: starrynight, text: 'starrynight'}, {img: tiger, text: 'tiger'}, {img: shell, text: 'shell'}]
-let explore_temp = [{img: annenberg, text: 'annenberg'}, {img: gate, text: 'gate'}, {img: yard, text: 'yard'}, 
+const explore_temp = [{img: annenberg, text: 'annenberg'}, {img: gate, text: 'gate'}, {img: yard, text: 'yard'}, 
 	{img: matthews, text: 'matthews'}, {img: adams, text: 'adams'}, {img: square, text: 'square'}, {img: manny, text: 'manny'}, 
-	{img: housing, text: 'housing'}, {img: housing2, text: 'housing2'}];
+    {img: housing, text: 'housing'}, {img: housing2, text: 'housing2'}];
+const profileTemp = [
+{
+    img: {img: square, text: 'square'},
+    wallpaper: {img: starrynight, text: 'starrynight'},
+    date: 'March 3, 2018',
+    quote: 'Go outside and take a breath'
+},
+{
+    img: {img: hall, text: 'hall'},
+    wallpaper: {img: tiger, text: 'tiger'},
+    date: 'March 2, 2018',
+    quote: 'Lorem ipsum whoo'
+},
+{
+    img: {img: students, text: 'students'},
+    wallpaper: {img: annenberg, text: 'annenberg'},
+    date: 'March 1, 2018',
+    quote: 'lorem ipsum this is a quote'
+}]
 
 const initialState = {
     screen: 'home',
     curPic: null,
-    yourPhotos: JSON.stringify(photos_temp),
-    yourWallpapers: JSON.stringify(wallpapers_temp),
+    profileHistory: JSON.stringify(profileTemp),
     explorePhotos: JSON.stringify(explore_temp)
 }
 
@@ -42,16 +52,18 @@ function reducer(state = initialState, action) {
             });
 
         case 'ADD_PHOTO':
-            let newImage = { img: action.src, text: action.text };
+            const newProfileImage = {
+                img: {img: action.src, text: action.text},
+                wallpaper: {img: placeholder, text: "wallpaper"},
+                date: "April 10, 2018",
+                quote: "Negative thoughts stick around because we believe them, not because we want or choose them."
+            };
             const newState = Object.assign({}, state, {
-                curPic: newImage
+                curPic: newProfileImage
             });
-            let photos = JSON.parse(newState.yourPhotos)
-            let explore = JSON.parse(newState.explorePhotos)
-            photos.splice(0, 0, newImage);
-            explore.splice(0, 0, newImage);
-            newState.yourPhotos = JSON.stringify(photos);
-            newState.explorePhotos = JSON.stringify(explore);
+            let profile = JSON.parse(newState.profileHistory);
+            profile.splice(0, 0, newProfileImage);
+            newState.profileHistory = JSON.stringify(profile);
             return newState;
 
         default:

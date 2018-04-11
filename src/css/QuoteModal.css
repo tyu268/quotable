@@ -13,7 +13,6 @@
 }
 
 .quote-text {
-    font-family: Arial;
     font-size: 1.7em;
     text-transform: uppercase;
     text-align: center;
@@ -33,7 +32,6 @@
 }
 
 .time-text {
-    font-family: Arial;
     font-size: 0.8em;
     color: white;
     opacity: 1;

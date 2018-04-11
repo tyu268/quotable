@@ -5,11 +5,11 @@ class ImageView extends Component {
     render() {
         return (
             <img 
-            	className='image'
-            	src={this.props.image[0]} 
-            	alt={this.props.image[1]} 
-            	onClick={this.props.onClick}
-        	/>
+                className='image'
+                src={this.props.image[0]} 
+                alt={this.props.image[1]} 
+                onClick={this.props.onClick}
+            />
         );
     }
 }

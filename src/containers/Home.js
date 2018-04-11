@@ -3,6 +3,7 @@ import Webcam from 'react-webcam';
 import { connect } from 'react-redux'
 import { changeScreen, addPhoto } from '../actions'
 import QuoteModal from './QuoteModal';
+import '../css/index.css';
 import '../css/Home.css';
 import camera_button from '../img/camera_button.png';
 import checkmark from '../img/checkmark.png';
@@ -70,7 +71,7 @@ class Home extends Component {
                     </div>
                     : this.props.today
                         ? <div className="image-view">
-                            <img src={this.props.today.img} alt={this.props.today.text} />
+                            <img src={this.props.today.img.img} alt={this.props.today.img.text} />
                         </div>
                         : <Webcam
                             className="image-view"
