@@ -2,6 +2,10 @@
     background: black;
 }
 
+.tutorial-image {
+    width: 80%;
+}
+
 /* Big Button adapted from Phillip's sticky note code */
 
 .bigbutton {
@@ -26,7 +30,7 @@
 }
 
 .end-tutorial {
-        color: #fff;
+    color: #fff;
     background-color: rgba(0, 0, 0, 0.7);
 	background-color: #D0D0D0;
     border: 5px outset #D0D0D0;
