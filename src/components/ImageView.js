@@ -26,7 +26,7 @@ class ImageView extends Component {
 
                 <button 
                     onClick={this.download}
-                    className="bigbutton download-button"
+                    className="download-button"
                 > 
                     Save as Wallpaper 
                 </button>
