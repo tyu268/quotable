@@ -1,3 +1,9 @@
+/*
+ * MOODPICKER.JS
+ *
+ * Component for selecting today's mood
+ */
+
 import React, { Component } from 'react';
 import '../css/MoodPicker.css';
 
@@ -8,7 +14,7 @@ class MoodPicker extends Component {
      constructor(props) {
         super(props);
 
-        // probably a much easier way to write this...
+        // Set state based on stored emotion 
         let expand_value = true;
         let selected_value = ['😄', 'happy'];
         if (props.mood) {
@@ -29,8 +35,8 @@ class MoodPicker extends Component {
         this.toggleExpand = this.toggleExpand.bind(this)
     }
 
+    // Toggle expanded/closed picker
     toggleExpand(new_emotion) {
-        // toggle expanded state
         this.setState(prevState => {
             return {
                 expand: !prevState.expand,
@@ -49,7 +55,7 @@ class MoodPicker extends Component {
                         ? // Expanded picker
                             <div className='mood-expanded'>
                                 <h1> How are you feeling today? </h1>
-                                {/* emotion list */}
+                                {/* Emotion list */}
                                 {
                                     this.state.emotions.map(emotion => {
                                         return (
@@ -61,7 +67,7 @@ class MoodPicker extends Component {
                                 }
                             </div>
                         
-                        : // closed picker
+                        : // Closed picker
                             <button className='mood-btn' onClick={() => this.toggleExpand(this.state.selected)}>
                                 <span role="img" aria-label={this.state.selected[1]}>{this.state.selected[0]}</span>
                             </button>

@@ -13,3 +13,7 @@ Once the dependencies are installed, you may view the application by running `np
 
 ## Build
 Run `npm run build` to create a final production build.
+
+## Documentation
+
+We built this concept as a single-page app using React and Redux. Relevant code can be mostly found in the `src` folder. Within `src`, the main pages of the app can be found in the `containers` folder, and small UI components can be found in the `components` folder. 

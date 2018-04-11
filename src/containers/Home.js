@@ -1,3 +1,9 @@
+/*
+ * HOME.JS
+ *
+ * Renders home page and implements camera functionality. 
+ */
+
 import React, { Component } from 'react';
 import Webcam from 'react-webcam';
 import { connect } from 'react-redux'
@@ -25,6 +31,7 @@ class Home extends Component {
         this.handleContinue = this.handleContinue.bind(this);
     }
 
+    // Setup for webcam access
     setRef(webcam) {
         this.webcam = webcam;
     }
@@ -51,12 +58,14 @@ class Home extends Component {
         });
     }
 
+    // Prompt user to confirm photo
     handleConfirm() {
         this.setState(prevState => {
             return {confirm: !this.state.confirm};
         })
     }
 
+    // Save confirmed photo, continue to explore screen
     handleContinue() {
         this.props.dispatch(addPhoto(this.state.cur_picture, 'new picture'));
         this.props.dispatch(changeScreen('explore'));
@@ -117,6 +126,7 @@ class Home extends Component {
                         </div>
 
                         {
+                            // Modal to confirm photo as submission
                             this.state.confirm &&
                             <div className="modal-confirm">
                                 <div className="modal-confirm-content">

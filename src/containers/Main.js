@@ -1,3 +1,10 @@
+/*
+ * MAIN.JS
+ *
+ * Framework for one-page app in React. 
+ * Handles switching between main "screens" of the app.
+ */
+
 import React, { Component } from 'react';
 import { connect } from 'react-redux'
 import Home from './Home';
@@ -8,6 +15,8 @@ import Tutorial from './Tutorial';
 class Main extends Component {
     render() {
         let screen = this.props.screen;
+
+        // Render correct screen
         return (
             <div className="main">
                 {screen === 'profile'

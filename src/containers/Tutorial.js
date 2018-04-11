@@ -1,3 +1,9 @@
+/*
+ * TUTORIAL.JS
+ *
+ * Renders tutorial page
+ */
+
 import React, { Component } from 'react';
 import { connect } from 'react-redux'
 import { changeScreen } from '../actions'
@@ -9,6 +15,7 @@ class Tutorial extends Component {
         this.handleClick = this.handleClick.bind(this);
     }
 
+    // Go to home screen
     handleClick(ev) {
         this.props.dispatch(changeScreen(ev.target.dataset.name));
     }
