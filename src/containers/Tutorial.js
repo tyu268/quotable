@@ -8,6 +8,7 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux'
 import { changeScreen } from '../actions'
 import '../css/Tutorial.css';
+import emojiscreen from "../img/emojiscreen.png"
 
 class Tutorial extends Component {
     constructor(props) {
@@ -27,7 +28,7 @@ class Tutorial extends Component {
 				<div classNam="tutorial-steps">
 					<ol>
 						<li>Choose how you’re feeling!</li>
-							<img src="../img/emojiscreen.png"/>
+							<img src={emojiscreen} />
 						<li>This is how you said you were feeling today!</li>
 							<img src="../img/emojidisplay.png"/>
 						<li>This is your quote prompt!</li>
@@ -40,6 +41,7 @@ class Tutorial extends Component {
 							<img src="../img/explorescreen.png"/>
 						<li>Swipe up to take photos and get started!</li>
 							<img src="../img/camerascreen.png"/>
+
 					</ol>
 				</div>
 			<button className="bigbutton end-tutorial" data-name='home' onClick={this.handleClick}>

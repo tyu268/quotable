@@ -1,9 +1,5 @@
 .tutorial-screen {
-	position: fixed;
     background: black;
-    width: 100%;
-    height: 100%;
-
 }
 
 /* Big Button adapted from Phillip's sticky note code */
