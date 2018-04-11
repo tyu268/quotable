@@ -16,14 +16,27 @@ class Tutorial extends Component {
 	render() {
 		return (
 			<div className="tutorial-screen">
-			<h1> This is how u use qutoable bruv </h1>
-			<ol>
-				<li>make sure u sad boi</li>
-				<li>SNAP DAT PHOT</li>
-				<li>walpasdf</li>
-			</ol>
+			<h1> Let's start with a quick overview... </h1>
+				<div classNam="tutorial-steps">
+					<ol>
+						<li>Choose how you’re feeling!</li>
+							<img src="../img/emojiscreen.png"/>
+						<li>This is how you said you were feeling today!</li>
+							<img src="../img/emojidisplay.png"/>
+						<li>This is your quote prompt!</li>
+							<img src="../img/quotescreen.png"/>
+						<li>This is how much time you have left to post.</li>
+							<img src="../img/timescreen.png"/>
+						<li>See your photos, wallpapers, and past emoji history here.</li>
+							<img src="../img/profilescreen.png"/>
+						<li>This is what other people have been posting!</li>
+							<img src="../img/explorescreen.png"/>
+						<li>Swipe up to take photos and get started!</li>
+							<img src="../img/camerascreen.png"/>
+					</ol>
+				</div>
 			<button className="bigbutton end-tutorial" data-name='home' onClick={this.handleClick}>
-                    Start Using Quotable
+                    Start Using Quotable!
             </button>
             </div>
 		);
