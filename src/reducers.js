@@ -1,3 +1,10 @@
+/*
+ * REDUCERS.JS
+ *
+ * Redux reducers.
+ */
+
+
 import square from './img/square.jpg';
 import hall from './img/hall.jpg';
 import students from './img/students.jpg';
@@ -56,6 +63,7 @@ function reducer(state = initialState, action) {
             });
 
         case 'ADD_PHOTO':
+            // Create new entry in profile
             const newProfileImage = {
                 img: {img: action.src, text: action.text},
                 wallpaper: {img: placeholder, text: "wallpaper"},
