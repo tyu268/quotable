@@ -22,19 +22,22 @@ const profileTemp = [
     img: {img: square, text: 'square'},
     wallpaper: {img: starrynight, text: 'starrynight'},
     date: 'March 3, 2018',
-    quote: 'Go outside and take a breath'
+    quote: 'Go outside and take a breath',
+    mood: ['😄', 'happy'],
 },
 {
     img: {img: hall, text: 'hall'},
     wallpaper: {img: tiger, text: 'tiger'},
     date: 'March 2, 2018',
-    quote: 'Lorem ipsum whoo'
+    quote: 'Lorem ipsum whoo',
+    mood: ['😡', 'angry'],
 },
 {
     img: {img: students, text: 'students'},
     wallpaper: {img: annenberg, text: 'annenberg'},
     date: 'March 1, 2018',
-    quote: 'lorem ipsum this is a quote'
+    quote: 'lorem ipsum this is a quote',
+    mood: ['🤢', 'disgusted'],
 }]
 
 const initialState = {
@@ -57,7 +60,8 @@ function reducer(state = initialState, action) {
                 img: {img: action.src, text: action.text},
                 wallpaper: {img: placeholder, text: "wallpaper"},
                 date: "April 10, 2018",
-                quote: "Negative thoughts stick around because we believe them, not because we want or choose them."
+                quote: "Negative thoughts stick around because we believe them, not because we want or choose them.",
+                mood: state.mood,
             };
             const newState = Object.assign({}, state, {
                 curPic: newProfileImage

@@ -8,6 +8,7 @@ class PhotoQuoteView extends Component {
             <div className="pq-view">
                 <div className="pq-date">
                     {this.props.date}
+                    {' ' + this.props.mood[0]}
                 </div>
                 <div className="pq-quote">
                     {this.props.quote}

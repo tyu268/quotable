@@ -66,6 +66,7 @@ class Profile extends Component {
                                     quote={p.quote}
                                     photo={p.img}
                                     wallpaper={p.wallpaper}
+                                    mood={p.mood}
                                     onClick={this.handleImageClick} />);
                             })}
                         </div>
