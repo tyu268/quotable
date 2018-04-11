@@ -54,7 +54,7 @@ class Profile extends Component {
             <div>
                 <div className='profile-header'>
                     <button data-name="photos" onClick={this.handleClick}>PHOTO HISTORY</button>
-                    <button data-name="emoji" onClick={this.handleClick}>EMOJI HISTORY</button>
+                    <button data-name="emoji" onClick={this.handleClick}>MOOD HISTORY</button>
                 </div>
                 {this.state.photoView
                     ? !this.state.image

@@ -6,8 +6,8 @@ import visualization from "../img/visualization.jpg"
 class EmojiHistory extends Component {
     render() {
         return (
-			<div className="visual">
-				<img src={visualization} alt="visualization" />
+			<div>
+				<img className="visual" src={visualization} alt="visualization" />
 			</div>
         );
     }
