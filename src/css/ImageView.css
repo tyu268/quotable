@@ -27,6 +27,7 @@
 	background-color: blue;
     border: 5px outset blue;
     color: white;
+    margin-bottom: 5em;
 }
 
 .download-button:focus {
