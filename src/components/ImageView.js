@@ -9,6 +9,7 @@ import '../css/ImageView.css';
 
 class ImageView extends Component {
 
+    // Download fake file
     download() {
         var fileDownload = require('js-file-download');
         fileDownload('imagine this is your wallpaper being saved', 'wallpaper.txt');
