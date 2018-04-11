@@ -9,6 +9,7 @@ class Explore extends Component {
     render() {
         return (
             <div>
+                <h1 className='explore-header'>RECENT SUBMISSIONS FROM EVERYONE</h1>
                 <PhotoDisplay photos={this.props.photos} />
                 <Navbar state='explore' />
             </div>

@@ -100,9 +100,7 @@ class Home extends Component {
                             {!this.state.cur_picture
 
                                 /* Camera Button */
-                                ? <div>
-                                    <img className="camera-btn" src={camera_button} alt="camera" onClick={this.handleCameraClick} />
-                                  </div>
+                                ? <img className="camera-btn" src={camera_button} alt="camera" onClick={this.handleCameraClick} />
 
                                 /* Photo Taken */
                                 : <div className="photo-screen">
