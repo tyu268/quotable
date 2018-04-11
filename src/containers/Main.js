@@ -14,8 +14,11 @@ class Main extends Component {
                     ? <Profile />
                     : screen === 'explore'
                         ? <Explore />
-                        : <Home />}
-                <Tutorial />
+                        : screen === 'tutorial'
+                            ? <Tutorial />
+                            : <Home />
+                }
+                
             </div>
         );
     }

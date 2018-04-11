@@ -38,7 +38,7 @@ const profileTemp = [
 }]
 
 const initialState = {
-    screen: 'home',
+    screen: 'tutorial',
     curPic: null,
     profileHistory: JSON.stringify(profileTemp),
     explorePhotos: JSON.stringify(explore_temp),
