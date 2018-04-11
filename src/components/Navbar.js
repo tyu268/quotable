@@ -1,3 +1,9 @@
+/*
+ * NAVBAR.JS
+ *
+ * Navbar component for navigation between pages
+ */
+
 import React, { Component } from 'react';
 import { connect } from 'react-redux'
 import { changeScreen } from '../actions'
@@ -12,11 +18,14 @@ class Navbar extends Component {
         this.handleClick = this.handleClick.bind(this);
     }
 
+    // Switch pages
     handleClick(ev) {
         this.props.dispatch(changeScreen(ev.target.dataset.name));
     }
 
     render() {
+
+        // Assign classes for displaying active page
         const screen = this.props.state;
         let profileClass = 'navbar-icon';
         let exploreClass = 'navbar-icon';
@@ -28,6 +37,7 @@ class Navbar extends Component {
         } else if (screen === 'home') {
             homeClass += ' cur-page';
         }
+        
         return (
             <div className='navbar'>
                 <div className={profileClass} data-name='profile' onClick={this.handleClick}>

@@ -1,3 +1,9 @@
+/*
+ * PROFILE.JS
+ *
+ * Renders user profile page.
+ */
+
 import React, { Component } from 'react';
 import { connect } from 'react-redux'
 import PhotoQuoteView from '../components/PhotoQuoteView';

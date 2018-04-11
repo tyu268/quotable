@@ -1,3 +1,9 @@
+/*
+ * QUOTEMODAL.JS
+ *
+ * Renders quote overlay of home screen
+ */
+
 import React, { Component } from 'react';
 import { connect } from 'react-redux'
 import { changeScreen } from '../actions'
@@ -12,14 +18,10 @@ import grid from '../img/grid.png';
 class QuoteModal extends Component {
     constructor(props) {
         super(props);
-        this.handleScreenClick = this.handleScreenClick.bind(this);
         this.handleCameraClick = this.handleCameraClick.bind(this);
     }
 
-    handleScreenClick(ev) {
-        this.props.dispatch(changeScreen(ev.target.name));
-    }
-
+    // Launch camera
     handleCameraClick() {
         this.props.handleClick();
     }
@@ -38,7 +40,8 @@ class QuoteModal extends Component {
                         </div>
                     </div>
 
-                    {
+                    {   
+                        // Hide camera activation when photo already submitted
                         !this.props.curPic &&
                         <div className="footer-ctr">
                             <img
@@ -48,35 +51,6 @@ class QuoteModal extends Component {
                                 onClick={this.handleCameraClick} />
                         </div>
                     }
-
-                    {/*
-                    <div className="footer">
-                        <div className="footer-ctr">
-                            <img
-                                name='profile'
-                                className="footer-img-photo"
-                                src={photo_img}
-                                alt="your profile"
-                                onClick={this.handleScreenClick} />
-                        </div>
-                        {!this.props.curPic &&
-                        <div className="footer-ctr">
-                            <img
-                                className="footer-img-arrow"
-                                src={arrow_up}
-                                alt="camera"
-                                onClick={this.handleCameraClick} />
-                        </div>}
-                        <div className="footer-ctr">
-                            <img 
-                                name='explore'
-                                className="footer-img-grid"
-                                src={grid}
-                                alt="explore"
-                                onClick={this.handleScreenClick} />
-                        </div>
-                    </div>
-                */}
 
                     <Navbar state='home' />
                 </div>
