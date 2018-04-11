@@ -116,25 +116,27 @@ class Home extends Component {
                             }
                         </div>
 
-                        {this.state.confirm &&
-                        <div className="modal-confirm">
-                            <div className="modal-confirm-content">
-                                <h6>Confirm submission?</h6>
-                                <p>You will not be able to submit another photo for the day.</p>
-                                <div className="modal-confirm-btns">
-                                    <button
-                                        className="modal-confirm-btn-ok"
-                                        onClick={this.handleContinue}>
-                                        OK
-                                    </button>
-                                    <button
-                                        className="modal-confirm-btn-cancel"
-                                        onClick={this.handleConfirm}>
-                                        Cancel
-                                    </button>
+                        {
+                            this.state.confirm &&
+                            <div className="modal-confirm">
+                                <div className="modal-confirm-content">
+                                    <h6>Confirm submission?</h6>
+                                    <p>You will not be able to submit another photo for the day.</p>
+                                    <div className="modal-confirm-btns">
+                                        <button
+                                            className="modal-confirm-btn-ok"
+                                            onClick={this.handleContinue}>
+                                            OK
+                                        </button>
+                                        <button
+                                            className="modal-confirm-btn-cancel"
+                                            onClick={this.handleConfirm}>
+                                            Cancel
+                                        </button>
+                                    </div>
                                 </div>
                             </div>
-                        </div>}
+                        }
                     </div>}
             </div>
         );

@@ -20,10 +20,13 @@ class Navbar extends Component {
         const screen = this.props.state;
         let profileClass = 'navbar-icon';
         let exploreClass = 'navbar-icon';
+        let homeClass = 'navbar-icon'
         if (screen === 'profile') {
             profileClass += ' cur-page';
         } else if (screen === 'explore') {
             exploreClass += ' cur-page';
+        } else if (screen === 'home') {
+            homeClass += ' cur-page';
         }
         return (
             <div className='navbar'>
@@ -34,8 +37,12 @@ class Navbar extends Component {
                         src={photo_img}
                         alt='your profile' />
                 </div>
-                <div className='navbar-icon' data-name='home' onClick={this.handleClick}>
-                    <img src={home} alt='home' data-name='home'/>
+                <div className={homeClass} data-name='home' onClick={this.handleClick}>
+                    <img 
+                        className={screen === 'home' ? 'cur-page' : ''} 
+                        data-name='home'
+                        src={home} 
+                        alt='home' />
                 </div>
                 <div className={exploreClass} data-name='explore' onClick={this.handleClick}>
                     <img

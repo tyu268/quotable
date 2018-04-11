@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux'
 import { changeScreen } from '../actions'
 import MoodPicker from '../components/MoodPicker';
+import Navbar from './Navbar';
 import '../css/QuoteModal.css';
 import clock from '../img/clock.png';
 import photo_img from '../img/photos.png';
@@ -36,6 +37,19 @@ class QuoteModal extends Component {
                             5 hours left!
                         </div>
                     </div>
+
+                    {
+                        !this.props.curPic &&
+                        <div className="footer-ctr">
+                            <img
+                                className="footer-img-arrow"
+                                src={arrow_up}
+                                alt="camera"
+                                onClick={this.handleCameraClick} />
+                        </div>
+                    }
+
+                    {/*
                     <div className="footer">
                         <div className="footer-ctr">
                             <img
@@ -62,6 +76,9 @@ class QuoteModal extends Component {
                                 onClick={this.handleScreenClick} />
                         </div>
                     </div>
+                */}
+
+                    <Navbar state='home' />
                 </div>
                 <MoodPicker />
             </div>
