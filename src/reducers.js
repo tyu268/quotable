@@ -41,7 +41,8 @@ const initialState = {
     screen: 'home',
     curPic: null,
     profileHistory: JSON.stringify(profileTemp),
-    explorePhotos: JSON.stringify(explore_temp)
+    explorePhotos: JSON.stringify(explore_temp),
+    mood: null,
 }
 
 function reducer(state = initialState, action) {
@@ -65,6 +66,11 @@ function reducer(state = initialState, action) {
             profile.splice(0, 0, newProfileImage);
             newState.profileHistory = JSON.stringify(profile);
             return newState;
+
+        case 'CHANGE_MOOD':
+            return Object.assign({}, state, {
+                mood: action.mood
+            });
 
         default:
             return state;

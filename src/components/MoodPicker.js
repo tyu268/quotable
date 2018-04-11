@@ -1,12 +1,23 @@
 import React, { Component } from 'react';
 import '../css/MoodPicker.css';
 
+import { connect } from 'react-redux'
+import { changeMood } from '../actions'
+
 class MoodPicker extends Component {
      constructor(props) {
         super(props);
+
+        // probably a much easier way to write this...
+        let expand_value = true;
+        let selected_value = ['😄', 'happy'];
+        if (props.mood) {
+            selected_value = props.mood;
+            expand_value = false;
+        }
         this.state = {
-            expand: true,
-            selected: ['😶', 'neutral'],
+            expand: expand_value,
+            selected: selected_value,
             emotions: [
                 ['😄', 'happy'],
                 ['😞', 'sad'],
@@ -27,12 +38,7 @@ class MoodPicker extends Component {
             };
         });
 
-        // new emotion assigned
-        if (new_emotion) {
-            this.setState(prevState => {
-                return {};
-            });
-        } 
+        this.props.dispatch(changeMood(new_emotion));
     }
 
     render() {
@@ -67,4 +73,10 @@ class MoodPicker extends Component {
     }
 }
 
-export default MoodPicker;
+const mapStateToProps = (state) => {
+    return {
+        mood: state.mood
+    };
+}
+
+export default connect(mapStateToProps)(MoodPicker)

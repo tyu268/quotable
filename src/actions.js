@@ -12,3 +12,10 @@ export function addPhoto(src, text) {
         text
     };
 }
+
+export function changeMood(mood) {
+    return {
+        type: 'CHANGE_MOOD',
+        mood
+    };
+}
