@@ -6,7 +6,7 @@ class EmojiHistory extends Component {
     render() {
         return (
 			<div className="visual">
-				<img src="../img/visualization.jpg"/>
+				<img src="../img/visualization.jpg" alt="visualization"/>
 			</div>
         );
     }

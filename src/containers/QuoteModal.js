@@ -6,14 +6,11 @@
 
 import React, { Component } from 'react';
 import { connect } from 'react-redux'
-import { changeScreen } from '../actions'
 import MoodPicker from '../components/MoodPicker';
 import Navbar from '../components/Navbar';
 import '../css/QuoteModal.css';
 import clock from '../img/clock.png';
-import photo_img from '../img/photos.png';
 import arrow_up from '../img/arrow-up.png';
-import grid from '../img/grid.png';
 
 class QuoteModal extends Component {
     constructor(props) {
