@@ -66,7 +66,7 @@ function reducer(state = initialState, action) {
             // Create new entry in profile and update explore page
             const newProfileImage = {
                 img: {img: action.src, text: action.text},
-                wallpaper: {img: placeholder, text: "wallpaper"},
+                wallpaper: {img: placeholder, text: "wallpaper", placeholder: true},
                 date: "April 10, 2018",
                 quote: "Negative thoughts stick around because we believe them, not because we want or choose them.",
                 mood: state.mood,

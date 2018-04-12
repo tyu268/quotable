@@ -33,7 +33,10 @@ class PhotoQuoteView extends Component {
                         <img
                             src={this.props.wallpaper.img}
                             alt={this.props.wallpaper.text}
-                            onClick={() => this.props.onClick(this.props.wallpaper.img, this.props.wallpaper.text)} />
+                            onClick={() => {
+                                if (!this.props.wallpaper.placeholder)
+                                    this.props.onClick(this.props.wallpaper.img, this.props.wallpaper.text);
+                            }} />
                     </div>
                 </div>
             </div>
