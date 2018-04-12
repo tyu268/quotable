@@ -11,10 +11,8 @@ class ImageView extends Component {
 
     // Download fake file
     download() {
-        if (!this.props.image.placeholder) {
-            let fileDownload = require('js-file-download');
-            fileDownload('imagine this is your wallpaper being saved', 'wallpaper.txt');
-        }
+        let fileDownload = require('js-file-download');
+        fileDownload('imagine this is your wallpaper being saved', 'wallpaper.txt');
     }
 
     render() {
