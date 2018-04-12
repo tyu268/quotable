@@ -1,3 +1,9 @@
+/*
+ * EMOJIHISTORY.JS
+ *
+ * Render mood history page
+ */
+
 import React, { Component } from 'react';
 import '../css/index.css';
 import '../css/EmojiHistory.css';
