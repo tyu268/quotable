@@ -1,5 +1,9 @@
 .tutorial-screen {
     background: black;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
 }
 
 .tutorial-image {
@@ -45,4 +49,8 @@
 .end-tutorial:active {
 	background-color: #84E1D1;
 	border: 5px inset #84E1D1;
+}
+
+.logo {
+    width: 50px;
 }
