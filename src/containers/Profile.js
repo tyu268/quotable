@@ -2,6 +2,9 @@
  * PROFILE.JS
  *
  * Renders user profile page.
+ * Allows users to toggle between profile history of past uploads,
+ * as either a list or an expanded view of a single image, and
+ * emoji history, a visualization of their past emotions.
  */
 
 import React, { Component } from 'react';
@@ -24,6 +27,7 @@ class Profile extends Component {
         this.handleImageClick = this.handleImageClick.bind(this);
     }
 
+    // Toggle between profile history and emoji history views
     handleClick(ev) {
         if (ev.target.dataset.name === "photos") {
             this.setState(prevState => {
@@ -36,6 +40,7 @@ class Profile extends Component {
         }
     }
 
+    // Enable user to open and close a single image by clicking on a photo
     handleImageClick(img, text) {
         if (this.state.image) {
             this.setState(prevState => {
@@ -56,8 +61,11 @@ class Profile extends Component {
                     <button data-name="photos" onClick={this.handleClick}>PHOTO HISTORY</button>
                     <button data-name="emoji" onClick={this.handleClick}>MOOD HISTORY</button>
                 </div>
-                {this.state.photoView
-                    ? !this.state.image
+                {   // Toggle between profile and emoji history views
+                    this.state.photoView
+                    ? 
+                        // Show single image when clicked
+                        !this.state.image
                         ? <div className='photo-views'>
                             {this.props.profileHistory.map(p => {
                                 return (<PhotoQuoteView

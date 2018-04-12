@@ -20,7 +20,7 @@ import housing from './img/housing.jpg';
 import housing2 from './img/housing2.jpg';
 import placeholder from './img/image-placeholder.png';
 
-// temp photo arrays
+// Photo arrays for explore and profile history
 const explore_temp = [{img: annenberg, text: 'annenberg'}, {img: gate, text: 'gate'}, {img: yard, text: 'yard'}, 
 	{img: matthews, text: 'matthews'}, {img: adams, text: 'adams'}, {img: square, text: 'square'}, {img: manny, text: 'manny'}, 
     {img: housing, text: 'housing'}, {img: housing2, text: 'housing2'}];
@@ -63,7 +63,7 @@ function reducer(state = initialState, action) {
             });
 
         case 'ADD_PHOTO':
-            // Create new entry in profile
+            // Create new entry in profile and update explore page
             const newProfileImage = {
                 img: {img: action.src, text: action.text},
                 wallpaper: {img: placeholder, text: "wallpaper"},
@@ -83,6 +83,7 @@ function reducer(state = initialState, action) {
             return newState;
 
         case 'CHANGE_MOOD':
+            // Edit daily mood, including on profile if you've taken an image that day
             let edited_profile = JSON.parse(state.profileHistory);
             if (state.curPic) {
                 edited_profile[0].mood = action.mood

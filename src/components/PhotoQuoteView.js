@@ -1,3 +1,12 @@
+/*
+ * PHOTOQUOTEVIEW.JS
+ *
+ * Renders a view of one of a user's previous uploads.
+ * Includes date, mood, quote, image, and wallpaper.
+ * Image and wallpaper can expand and close on click.
+ */
+
+
 import React, { Component } from 'react';
 import '../css/index.css';
 import '../css/PhotoQuoteView.css';
