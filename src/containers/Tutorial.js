@@ -31,7 +31,7 @@ class Tutorial extends Component {
 		return (
 			<div className="tutorial-screen">
 			<h1> Let's start with a quick overview... </h1>
-				<div classNam="tutorial-steps">
+				<div className="tutorial-steps">
 					<ol>
 						<li>Choose how you’re feeling today!</li>
 							<img className="tutorial-image" src={emojiscreen} alt="Screen with list of emojis: happy, sad, angry, disgusted, pizza."/>

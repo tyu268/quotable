@@ -75,8 +75,11 @@ function reducer(state = initialState, action) {
                 curPic: newProfileImage
             });
             let profile = JSON.parse(newState.profileHistory);
+            let explore = JSON.parse(newState.explorePhotos);
             profile.splice(0, 0, newProfileImage);
+            explore.splice(0, 0, newProfileImage.img);
             newState.profileHistory = JSON.stringify(profile);
+            newState.explorePhotos = JSON.stringify(explore);
             return newState;
 
         case 'CHANGE_MOOD':
