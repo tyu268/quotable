@@ -83,8 +83,13 @@ function reducer(state = initialState, action) {
             return newState;
 
         case 'CHANGE_MOOD':
+            let edited_profile = JSON.parse(state.profileHistory);
+            if (state.curPic) {
+                edited_profile[0].mood = action.mood
+            }
             return Object.assign({}, state, {
-                mood: action.mood
+                mood: action.mood,
+                profileHistory: JSON.stringify(edited_profile),
             });
 
         default:
