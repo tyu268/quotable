@@ -12,6 +12,33 @@ import Profile from './Profile';
 import Explore from './Explore';
 import Tutorial from './Tutorial';
 
+import SwipeableViews from 'react-swipeable-views';
+
+// Swipeable View Styles
+const styles = {
+  slideContainer: {
+    height: window.innerHeight,
+    WebkitOverflowScrolling: 'touch'
+  },
+  slide: {
+    minHeight: 100,
+    color: '#fff',
+  },
+  slide1: {
+    height: window.innerHeight
+  },
+  slide2: {
+    height: window.innerHeight
+  },
+  scroll: {
+    height: 100,
+    overflow: 'scroll',
+  },
+  slide3: {
+    height: window.innerHeight
+  },
+};
+
 class Main extends Component {
     render() {
         let screen = this.props.screen;
@@ -19,13 +46,19 @@ class Main extends Component {
         // Render correct screen
         return (
             <div className="main">
-                {screen === 'profile'
-                    ? <Profile />
-                    : screen === 'explore'
-                        ? <Explore />
-                        : screen === 'tutorial'
-                            ? <Tutorial />
-                            : <Home />
+                {screen === 'tutorial'
+                    ? <Tutorial />
+                    : <SwipeableViews>
+                    <div style={Object.assign({}, styles.slide, styles.slide1)}>
+                      <Home />
+                    </div>
+                    <div style={Object.assign({}, styles.slide, styles.slide2)}>
+                      <Explore />
+                    </div>
+                    <div style={Object.assign({}, styles.slide, styles.slide3)}>
+                      <Profile />
+                    </div>
+                   </SwipeableViews>
                 }
                 
             </div>
