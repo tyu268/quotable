@@ -75,7 +75,7 @@ class Home extends Component {
         return (
             <div className="home">
                 {this.state.cur_picture
-                    ? <div className="image-view">
+                    ? <div className={"image-view" + (this.state.confirm ? ' big-blur' : '')}>
                         <img src={this.state.cur_picture} alt="current"/>
                     </div>
                     : this.props.today
@@ -83,7 +83,7 @@ class Home extends Component {
                             <img src={this.props.today.img.img} alt={this.props.today.img.text} />
                         </div>
                         : <Webcam
-                            className="image-view"
+                            className={"image-view" + (this.state.show_quote ? ' big-blur' : '')}
                             audio={false}
                             ref={this.setRef}
                             screenshotFormat="image/jpeg"/>}
@@ -99,7 +99,7 @@ class Home extends Component {
                         {/* Return to quote arrow */}
                         <button className="return-btn">
                             <img 
-                                className="return-btn-img shadow-inverse"
+                                className={"return-btn-img shadow-inverse" + (this.state.confirm ? ' shadow-inverse-blur' : '')}
                                 onClick={this.handleArrowClick} 
                                 src={arrow_down}
                                 alt="back to quote" />
@@ -114,9 +114,17 @@ class Home extends Component {
                                 /* Photo Taken */
                                 : <div className="photo-screen">
                                     <div className="photo-header">
-                                        <button className="cancel-btn shadow-inverse" onClick={this.handleCancel}>X</button>
+                                        <button 
+                                            className={"cancel-btn shadow-inverse" + (this.state.confirm ? ' shadow-inverse-blur' : '')} 
+                                            onClick={this.handleCancel}>
+                                            X
+                                        </button>
                                         <button className="arrow-btn" onClick={this.handleConfirm}>
-                                            <img className="arrow-btn-img shadow-inverse" src={checkmark} alt="confirm" />
+                                            <img 
+                                                className={"arrow-btn-img shadow-inverse" + (this.state.confirm ? ' shadow-inverse-blur' : '')} 
+                                                src={checkmark} 
+                                                alt="confirm" 
+                                            />
                                         </button>
                                     </div>
                                     <div className="photo-footer">
