@@ -53,17 +53,23 @@
     width: 2em;
 }
 
+.fill-height {
+    height: 100%;
+}
+
 .home-btns {
     display: flex;
     flex-flow: column nowrap;
     align-items: center;
+    position: relative;
+    height: 100%;
 }
 
 .camera-btn {
     width: 2.5em;
+    padding: 0.7em;
     position: absolute;
     bottom: 0;
-    padding: 0.7em;
 }
 
 .photo-screen {

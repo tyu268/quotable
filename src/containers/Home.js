@@ -14,6 +14,30 @@ import '../css/Home.css';
 import camera_button from '../img/camera_button.png';
 import checkmark from '../img/checkmark.png';
 import arrow_down from '../img/arrow-down.png';
+import SwipeableViews from 'react-swipeable-views';
+
+// Swipeable View Styles
+const styles = {
+  slideContainer: {
+    height: window.innerHeight,
+  },
+  slide: {
+    minHeight: 100,
+    color: '#fff',
+  },
+  slide1: {
+    height: window.innerHeight
+  },
+  slide2: {
+    height: window.innerHeight
+  },
+  scroll: {
+    height: 100,
+    overflow: 'scroll',
+  },
+  slide3: {
+  },
+};
 
 class Home extends Component {
     constructor(props) {
@@ -88,74 +112,75 @@ class Home extends Component {
                             ref={this.setRef}
                             screenshotFormat="image/jpeg"/>}
 
-                {this.state.show_quote
+                <SwipeableViews containerStyle={styles.slideContainer} axis="y" resistance>
+                    <div style={Object.assign({}, styles.slide, styles.slide1)}>
+                        <QuoteModal handleClick={this.handleArrowClick} />
+                    </div>
+                    <div style={Object.assign({}, styles.slide, styles.slide2)}>
+                        <div className="fill-height">
+                            {/* Return to quote arrow */}
+                            <button className="return-btn">
+                                <img 
+                                    className={"return-btn-img shadow-inverse" + (this.state.confirm ? ' shadow-inverse-blur' : '')}
+                                    onClick={this.handleArrowClick} 
+                                    src={arrow_down}
+                                    alt="back to quote" />
+                            </button>
 
-                    /* Quote */
-                    ? <QuoteModal handleClick={this.handleArrowClick} />
+                            <div className="home-btns">
+                                {!this.state.cur_picture
 
-                    /* Camera */
-                    : <div>
+                                    /* Camera Button */
+                                    ? <img className="camera-btn shadow-inverse" src={camera_button} alt="camera" onClick={this.handleCameraClick} />
 
-                        {/* Return to quote arrow */}
-                        <button className="return-btn">
-                            <img 
-                                className={"return-btn-img shadow-inverse" + (this.state.confirm ? ' shadow-inverse-blur' : '')}
-                                onClick={this.handleArrowClick} 
-                                src={arrow_down}
-                                alt="back to quote" />
-                        </button>
+                                    /* Photo Taken */
+                                    : <div className="photo-screen">
+                                        <div className="photo-header">
+                                            <button 
+                                                className={"cancel-btn shadow-inverse" + (this.state.confirm ? ' shadow-inverse-blur' : '')} 
+                                                onClick={this.handleCancel}>
+                                                X
+                                            </button>
+                                            <button className="arrow-btn" onClick={this.handleConfirm}>
+                                                <img 
+                                                    className={"arrow-btn-img shadow-inverse" + (this.state.confirm ? ' shadow-inverse-blur' : '')} 
+                                                    src={checkmark} 
+                                                    alt="confirm" 
+                                                />
+                                            </button>
+                                        </div>
+                                        <div className="photo-footer">
+                                        </div>
+                                      </div>
+                                }
+                            </div>
 
-                        <div className="home-btns">
-                            {!this.state.cur_picture
-
-                                /* Camera Button */
-                                ? <img className="camera-btn shadow-inverse" src={camera_button} alt="camera" onClick={this.handleCameraClick} />
-
-                                /* Photo Taken */
-                                : <div className="photo-screen">
-                                    <div className="photo-header">
-                                        <button 
-                                            className={"cancel-btn shadow-inverse" + (this.state.confirm ? ' shadow-inverse-blur' : '')} 
-                                            onClick={this.handleCancel}>
-                                            X
-                                        </button>
-                                        <button className="arrow-btn" onClick={this.handleConfirm}>
-                                            <img 
-                                                className={"arrow-btn-img shadow-inverse" + (this.state.confirm ? ' shadow-inverse-blur' : '')} 
-                                                src={checkmark} 
-                                                alt="confirm" 
-                                            />
-                                        </button>
-                                    </div>
-                                    <div className="photo-footer">
-                                    </div>
-                                  </div>
-                            }
-                        </div>
-
-                        {
-                            // Modal to confirm photo as submission
-                            this.state.confirm &&
-                            <div className="modal-confirm">
-                                <div className="modal-confirm-content">
-                                    <h6>Confirm submission?</h6>
-                                    <p>You will not be able to submit another photo for the day.</p>
-                                    <div className="modal-confirm-btns">
-                                        <button
-                                            className="modal-confirm-btn-ok"
-                                            onClick={this.handleContinue}>
-                                            OK
-                                        </button>
-                                        <button
-                                            className="modal-confirm-btn-cancel"
-                                            onClick={this.handleConfirm}>
-                                            Cancel
-                                        </button>
+                            {
+                                // Modal to confirm photo as submission
+                                this.state.confirm &&
+                                <div className="modal-confirm">
+                                    <div className="modal-confirm-content">
+                                        <h6>Confirm submission?</h6>
+                                        <p>You will not be able to submit another photo for the day.</p>
+                                        <div className="modal-confirm-btns">
+                                            <button
+                                                className="modal-confirm-btn-ok"
+                                                onClick={this.handleContinue}>
+                                                OK
+                                            </button>
+                                            <button
+                                                className="modal-confirm-btn-cancel"
+                                                onClick={this.handleConfirm}>
+                                                Cancel
+                                            </button>
+                                        </div>
                                     </div>
                                 </div>
-                            </div>
-                        }
-                    </div>}
+                            }
+                        </div>
+                    </div>
+                </SwipeableViews>
+
             </div>
         );
     }
