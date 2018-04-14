@@ -99,7 +99,7 @@ class Home extends Component {
                         {/* Return to quote arrow */}
                         <button className="return-btn">
                             <img 
-                                className="return-btn-img"
+                                className="return-btn-img shadow-inverse"
                                 onClick={this.handleArrowClick} 
                                 src={arrow_down}
                                 alt="back to quote" />
@@ -109,14 +109,14 @@ class Home extends Component {
                             {!this.state.cur_picture
 
                                 /* Camera Button */
-                                ? <img className="camera-btn" src={camera_button} alt="camera" onClick={this.handleCameraClick} />
+                                ? <img className="camera-btn shadow-inverse" src={camera_button} alt="camera" onClick={this.handleCameraClick} />
 
                                 /* Photo Taken */
                                 : <div className="photo-screen">
                                     <div className="photo-header">
-                                        <button className="cancel-btn" onClick={this.handleCancel}>X</button>
+                                        <button className="cancel-btn shadow-inverse" onClick={this.handleCancel}>X</button>
                                         <button className="arrow-btn" onClick={this.handleConfirm}>
-                                            <img className="arrow-btn-img" src={checkmark} alt="confirm" />
+                                            <img className="arrow-btn-img shadow-inverse" src={checkmark} alt="confirm" />
                                         </button>
                                     </div>
                                     <div className="photo-footer">
