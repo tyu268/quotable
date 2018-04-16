@@ -6,7 +6,7 @@
 
 import React, { Component } from 'react';
 import { connect } from 'react-redux'
-import MoodPicker from '../components/MoodPicker';
+import MoodPickerButton from '../components/MoodPickerButton';
 import '../css/QuoteModal.css';
 import clock from '../img/clock.png';
 import arrow_up from '../img/arrow-up.png';
@@ -48,7 +48,7 @@ class QuoteModal extends Component {
                         </div>
                     }
                 </div>
-                <MoodPicker />
+                <MoodPickerButton />
             </div>
         );
     }

@@ -11,6 +11,7 @@ import Home from './Home';
 import Profile from './Profile';
 import Explore from './Explore';
 import Tutorial from './Tutorial';
+import MoodPicker from './MoodPicker'
 
 class Main extends Component {
     render() {
@@ -25,7 +26,9 @@ class Main extends Component {
                         ? <Explore />
                         : screen === 'tutorial'
                             ? <Tutorial />
-                            : <Home />
+                            : screen === 'mood-picker'
+                                ? <MoodPicker />
+                                : <Home />
                 }
                 
             </div>
