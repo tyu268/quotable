@@ -112,6 +112,29 @@ class Home extends Component {
                             ref={this.setRef}
                             screenshotFormat="image/jpeg"/>}
 
+                {
+                    // Modal to confirm photo as submission
+                    this.state.confirm &&
+                    <div className="modal-confirm">
+                        <div className="modal-confirm-content">
+                            <h6>Confirm submission?</h6>
+                            <p>You will not be able to submit another photo for the day.</p>
+                            <div className="modal-confirm-btns">
+                                <button
+                                    className="modal-confirm-btn-ok"
+                                    onClick={this.handleContinue}>
+                                    OK
+                                </button>
+                                <button
+                                    className="modal-confirm-btn-cancel"
+                                    onClick={this.handleConfirm}>
+                                    Cancel
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                }
+
                 <SwipeableViews containerStyle={styles.slideContainer} axis="y" resistance>
                     <div style={Object.assign({}, styles.slide, styles.slide1)}>
                         <QuoteModal handleClick={this.handleArrowClick} />
@@ -154,29 +177,6 @@ class Home extends Component {
                                       </div>
                                 }
                             </div>
-
-                            {
-                                // Modal to confirm photo as submission
-                                this.state.confirm &&
-                                <div className="modal-confirm">
-                                    <div className="modal-confirm-content">
-                                        <h6>Confirm submission?</h6>
-                                        <p>You will not be able to submit another photo for the day.</p>
-                                        <div className="modal-confirm-btns">
-                                            <button
-                                                className="modal-confirm-btn-ok"
-                                                onClick={this.handleContinue}>
-                                                OK
-                                            </button>
-                                            <button
-                                                className="modal-confirm-btn-cancel"
-                                                onClick={this.handleConfirm}>
-                                                Cancel
-                                            </button>
-                                        </div>
-                                    </div>
-                                </div>
-                            }
                         </div>
                     </div>
                 </SwipeableViews>
