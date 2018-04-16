@@ -8,13 +8,6 @@ import React, { Component } from 'react';
 import '../css/ImageView.css';
 
 class ImageView extends Component {
-
-    // Download fake file
-    download() {
-        let fileDownload = require('js-file-download');
-        fileDownload('imagine this is your wallpaper being saved', 'wallpaper.txt');
-    }
-
     render() {
         return (
             <div>
@@ -25,12 +18,11 @@ class ImageView extends Component {
                     onClick={this.props.onClick}
                 />
 
-                <button 
-                    onClick={this.download}
-                    className="download-button"
-                > 
-                    Save as Wallpaper 
-                </button>
+                <a href={this.props.image[0]} download="image.png">
+                    <button className="download-button"> 
+                        Save Image
+                    </button>
+                </a>
 
             </div>
         );
