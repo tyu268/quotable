@@ -10,7 +10,7 @@ import '../css/ImageView.css';
 class ImageView extends Component {
     render() {
         return (
-            <div>
+            <div className="view-screen">
                 <img 
                     className='image'
                     src={this.props.image[0]} 
@@ -20,7 +20,7 @@ class ImageView extends Component {
 
                 <a href={this.props.image[0]} download="image.png">
                     <button className="download-button"> 
-                        Save Image
+                        SAVE IMAGE
                     </button>
                 </a>
 
