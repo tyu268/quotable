@@ -7,7 +7,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux'
 import MoodPicker from '../components/MoodPicker';
-import Navbar from '../components/Navbar';
 import '../css/QuoteModal.css';
 import clock from '../img/clock.png';
 import arrow_up from '../img/arrow-up.png';
@@ -48,8 +47,6 @@ class QuoteModal extends Component {
                                 onClick={this.handleCameraClick} />
                         </div>
                     }
-
-                    <Navbar state='home' />
                 </div>
                 <MoodPicker />
             </div>

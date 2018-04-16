@@ -53,8 +53,8 @@
     width: 2em;
 }
 
-.fill-height {
-    height: 100%;
+.fill-height-to-navbar {
+    height: calc(100% - 2.3em); /* make room for navbar */
 }
 
 .home-btns {

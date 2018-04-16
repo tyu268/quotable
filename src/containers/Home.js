@@ -15,27 +15,18 @@ import camera_button from '../img/camera_button.png';
 import checkmark from '../img/checkmark.png';
 import arrow_down from '../img/arrow-down.png';
 import SwipeableViews from 'react-swipeable-views';
+import Navbar from '../components/Navbar';
 
 // Swipeable View Styles
 const styles = {
   slideContainer: {
     height: window.innerHeight,
   },
-  slide: {
-    minHeight: 100,
-    color: '#fff',
-  },
   slide1: {
     height: window.innerHeight
   },
   slide2: {
     height: window.innerHeight
-  },
-  scroll: {
-    height: 100,
-    overflow: 'scroll',
-  },
-  slide3: {
   },
 };
 
@@ -136,11 +127,11 @@ class Home extends Component {
                 }
 
                 <SwipeableViews containerStyle={styles.slideContainer} axis="y" resistance>
-                    <div style={Object.assign({}, styles.slide, styles.slide1)}>
+                    <div style={Object.assign({}, styles.slide1)}>
                         <QuoteModal handleClick={this.handleArrowClick} />
                     </div>
-                    <div style={Object.assign({}, styles.slide, styles.slide2)}>
-                        <div className="fill-height">
+                    <div style={Object.assign({}, styles.slide2)}>
+                        <div className="fill-height-to-navbar">
                             {/* Return to quote arrow */}
                             <button className="return-btn">
                                 <img 
@@ -181,6 +172,7 @@ class Home extends Component {
                     </div>
                 </SwipeableViews>
 
+                <Navbar state='home' />
             </div>
         );
     }
