@@ -126,7 +126,7 @@ class Home extends Component {
                     </div>
                 }
 
-                <SwipeableViews containerStyle={styles.slideContainer} axis="y" resistance>
+                <SwipeableViews containerStyle={styles.slideContainer} axis="y" resistance onChangeIndex={() => this.handleArrowClick()}>
                     <div style={Object.assign({}, styles.slide1)}>
                         <QuoteModal handleClick={this.handleArrowClick} />
                     </div>
