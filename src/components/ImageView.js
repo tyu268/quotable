@@ -15,8 +15,11 @@ class ImageView extends Component {
                     className='image'
                     src={this.props.image[0]} 
                     alt={this.props.image[1]} 
-                    onClick={this.props.onClick}
                 />
+
+                <button className="download-button back-button" onClick={this.props.onClick}> 
+                        BACK
+                </button>
 
                 <a href={this.props.image[0]} download="image.png">
                     <button className="download-button"> 
