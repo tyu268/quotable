@@ -35,35 +35,47 @@
 }
 
 .big-blur {
-    filter: blur(5px);
-    -webkit-filter: blur(10px);
+    filter: blur(20px);
+    -webkit-filter: blur(20px);
 }
 
-.return-btn {
-    position: fixed;
-    left: 47%;
-    border: none;
-    background-color: transparent;
-    width: 2em;
-    padding: 1em 0em;
+.text-blur {
+    color: transparent;
+    text-shadow: 0 0 4px white;
+}
+
+.return-sign {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
     z-index: 1;
+    color: white;
+    text-shadow: 1px 1px black;
+    padding: 1em;
 }
 
-.return-btn-img {
+.return-sign-img {
     width: 2em;
+}
+
+.fill-height-to-navbar {
+    height: calc(100% - 2.3em); /* make room for navbar */
 }
 
 .home-btns {
     display: flex;
     flex-flow: column nowrap;
     align-items: center;
+    position: relative;
+    height: 100%;
 }
 
 .camera-btn {
     width: 2.5em;
+    padding: 0.7em;
     position: absolute;
     bottom: 0;
-    padding: 0.7em;
 }
 
 .photo-screen {
@@ -115,6 +127,7 @@
     width: 100%;
     height: 100%;
     border: 1px solid black;
+    z-index: 1;
 }
 
 .modal-confirm-content {
