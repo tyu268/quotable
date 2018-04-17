@@ -13,44 +13,26 @@
 /* Big Button adapted from Phillip's sticky note code */
 
 .bigbutton {
-    text-shadow: 2px 2px rgba(0,0,0,0.5);
-	display: block;
-	margin: auto;
-    padding: 1em 2em;
+
+    padding: 0.5em 2.5em;
     text-align: center;
     font-family: 'Open Sans Condensed', sans-serif;
     font-size: 1em;
     border-radius: 1em;
-    transition-duration: 0.1s;
+    background-color: white;
+    color: black;
+    margin-bottom: 5em;
+    border-radius: 50px;
 }
 
 .bigbutton:hover {
-    box-shadow: 0em 0.3em 0.2em rgba(0,0,0,0.5);
-}
-
-.bigbutton:active {
-	box-shadow: 0em 0em 0em;
-	transform: translateY(0.3em);
-}
-
-.end-tutorial {
-    color: #fff;
-    background-color: rgba(0, 0, 0, 0.7);
-	background-color: #D0D0D0;
-    border: 5px outset #D0D0D0;
+    background-color: #84E1D1;
     color: white;
 }
 
-.end-tutorial:hover {
-	background-color: #84E1D1; 
-	border: 5px outset #84E1D1;
-}
-
-.end-tutorial:active {
-	background-color: #84E1D1;
-	border: 5px inset #84E1D1;
-}
 
 .logo {
-    width: 50px;
+    width: 75px;
+    min-width: 10%;
+    padding-top: 2em;
 }
