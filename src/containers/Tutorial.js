@@ -152,13 +152,12 @@ class Tutorial extends Component {
 						)}
 					>
 						<img style={styles.img} src={img.img} alt={img.alt}/>
-						<p>{img.text}</p>
 					</Animated.div>
 					);
 				})}	
 				</SwipeableViews>
 				{index === 6 &&
-				<button className="bigbutton" data-name='home' onClick={this.handleClick}>
+				<button className="bigbutton" data-name='mood-picker' onClick={this.handleClick}>
 	                    Start Using Quotable!
 				</button>}
             </div>

@@ -12,10 +12,6 @@ import clock from '../img/clock.png';
 import arrow_up from '../img/arrow-up.png';
 
 class QuoteModal extends Component {
-    constructor(props) {
-        super(props);
-    }
-
     render() {
         return (
             <div>
