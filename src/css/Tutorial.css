@@ -1,4 +1,9 @@
 .tutorial-screen {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    box-sizing: border-box;
     background: black;
     display: flex;
     justify-content: center;
@@ -6,14 +11,39 @@
     align-items: center;
 }
 
+.tutorial-header {
+    display: flex;
+    align-items: center;
+    padding: 0.5em 0;
+}
+
+.tutorial-header > span {
+    margin: 0 0.5em;
+    font-size: 28px;
+}
+
 .tutorial-image {
-    width: 80%;
+    width: 100%;
+}
+
+.tutorial-slider {
+    width: 100%;
+    box-sizing: border-box;
+    padding: 0 1em;
+}
+
+p {
+    width: 72%;
+    margin-top: 0.2em;
+    text-align: center;
+    align-items: center;
 }
 
 /* Big Button adapted from Phillip's sticky note code */
 
 .bigbutton {
-
+    position: fixed;
+    bottom: 0.8em;
     padding: 0.5em 2.5em;
     text-align: center;
     font-family: 'Open Sans Condensed', sans-serif;
@@ -21,7 +51,6 @@
     border-radius: 1em;
     background-color: white;
     color: black;
-    margin-bottom: 5em;
     border-radius: 50px;
 }
 
@@ -32,7 +61,6 @@
 
 
 .logo {
-    width: 75px;
+    width: 50px;
     min-width: 10%;
-    padding-top: 2em;
 }
