@@ -14,6 +14,21 @@ import '../css/Home.css';
 import camera_button from '../img/camera_button.png';
 import checkmark from '../img/checkmark.png';
 import arrow_down from '../img/arrow-down.png';
+import SwipeableViews from 'react-swipeable-views';
+import Navbar from '../components/Navbar';
+
+// Swipeable View Styles
+const styles = {
+  slideContainer: {
+    height: window.innerHeight,
+  },
+  slide1: {
+    height: window.innerHeight
+  },
+  slide2: {
+    height: window.innerHeight
+  },
+};
 
 class Home extends Component {
     constructor(props) {
@@ -21,10 +36,11 @@ class Home extends Component {
         this.state = {
             show_quote: true,
             cur_picture: null,
-            confirm: false
+            confirm: false,
+            submitted: false,
         };
         this.setRef = this.setRef.bind(this);
-        this.handleArrowClick = this.handleArrowClick.bind(this);
+        this.toggleBlur = this.toggleBlur.bind(this);
         this.handleCameraClick = this.handleCameraClick.bind(this);
         this.handleCancel = this.handleCancel.bind(this);
         this.handleConfirm = this.handleConfirm.bind(this);
@@ -37,7 +53,7 @@ class Home extends Component {
     }
 
     // Switch from quote to camera
-    handleArrowClick() {
+    toggleBlur() {
         this.setState(prevState => {
             return {show_quote: !prevState.show_quote};
         });
@@ -88,74 +104,77 @@ class Home extends Component {
                             ref={this.setRef}
                             screenshotFormat="image/jpeg"/>}
 
-                {this.state.show_quote
-
-                    /* Quote */
-                    ? <QuoteModal handleClick={this.handleArrowClick} />
-
-                    /* Camera */
-                    : <div>
-
-                        {/* Return to quote arrow */}
-                        <button className="return-btn">
-                            <img 
-                                className={"return-btn-img shadow-inverse" + (this.state.confirm ? ' shadow-inverse-blur' : '')}
-                                onClick={this.handleArrowClick} 
-                                src={arrow_down}
-                                alt="back to quote" />
-                        </button>
-
-                        <div className="home-btns">
-                            {!this.state.cur_picture
-
-                                /* Camera Button */
-                                ? <img className="camera-btn shadow-inverse" src={camera_button} alt="camera" onClick={this.handleCameraClick} />
-
-                                /* Photo Taken */
-                                : <div className="photo-screen">
-                                    <div className="photo-header">
-                                        <button 
-                                            className={"cancel-btn shadow-inverse" + (this.state.confirm ? ' shadow-inverse-blur' : '')} 
-                                            onClick={this.handleCancel}>
-                                            X
-                                        </button>
-                                        <button className="arrow-btn" onClick={this.handleConfirm}>
-                                            <img 
-                                                className={"arrow-btn-img shadow-inverse" + (this.state.confirm ? ' shadow-inverse-blur' : '')} 
-                                                src={checkmark} 
-                                                alt="confirm" 
-                                            />
-                                        </button>
-                                    </div>
-                                    <div className="photo-footer">
-                                    </div>
-                                  </div>
-                            }
+                {
+                    // Modal to confirm photo as submission
+                    this.state.confirm &&
+                    <div className="modal-confirm">
+                        <div className="modal-confirm-content">
+                            <h6>Confirm submission?</h6>
+                            <p>You will not be able to submit another photo for the day.</p>
+                            <div className="modal-confirm-btns">
+                                <button
+                                    className="modal-confirm-btn-ok"
+                                    onClick={this.handleContinue}>
+                                    OK
+                                </button>
+                                <button
+                                    className="modal-confirm-btn-cancel"
+                                    onClick={this.handleConfirm}>
+                                    Cancel
+                                </button>
+                            </div>
                         </div>
+                    </div>
+                }
+                {
+                    this.props.today
+                    ? <QuoteModal handleClick={this.toggleBlur} />
+                    : <SwipeableViews containerStyle={styles.slideContainer} axis="y" resistance onChangeIndex={() => this.toggleBlur()}>
+                        <div style={Object.assign({}, styles.slide1)}>
+                            <QuoteModal handleClick={this.toggleBlur} />
+                        </div>
+                            <div style={Object.assign({}, styles.slide2)}>
+                                <div className="fill-height-to-navbar">
+                                    <div className="home-btns">
+                                        <div className="return-sign">
+                                            <small className={this.state.confirm ? ' text-blur' : ''}>Swipe down to return to quote</small>
+                                            <img 
+                                                className={"return-sign-img shadow-inverse" + (this.state.confirm ? ' shadow-inverse-blur' : '')}
+                                                src={arrow_down}
+                                                alt="Swipe down to quote" />
+                                        </div>
+                                        {!this.state.cur_picture
 
-                        {
-                            // Modal to confirm photo as submission
-                            this.state.confirm &&
-                            <div className="modal-confirm">
-                                <div className="modal-confirm-content">
-                                    <h6>Confirm submission?</h6>
-                                    <p>You will not be able to submit another photo for the day.</p>
-                                    <div className="modal-confirm-btns">
-                                        <button
-                                            className="modal-confirm-btn-ok"
-                                            onClick={this.handleContinue}>
-                                            OK
-                                        </button>
-                                        <button
-                                            className="modal-confirm-btn-cancel"
-                                            onClick={this.handleConfirm}>
-                                            Cancel
-                                        </button>
+                                            /* Camera Button */
+                                            ? <img className="camera-btn shadow-inverse" src={camera_button} alt="camera" onClick={this.handleCameraClick} />
+
+                                            /* Photo Taken */
+                                            : <div className="photo-screen">
+                                                <div className="photo-header">
+                                                    <button 
+                                                        className={"cancel-btn shadow-inverse" + (this.state.confirm ? ' shadow-inverse-blur' : '')} 
+                                                        onClick={this.handleCancel}>
+                                                        X
+                                                    </button>
+                                                    <button className="arrow-btn" onClick={this.handleConfirm}>
+                                                        <img 
+                                                            className={"arrow-btn-img shadow-inverse" + (this.state.confirm ? ' shadow-inverse-blur' : '')} 
+                                                            src={checkmark} 
+                                                            alt="confirm" 
+                                                        />
+                                                    </button>
+                                                </div>
+                                                <div className="photo-footer">
+                                                </div>
+                                              </div>
+                                        }
                                     </div>
                                 </div>
                             </div>
-                        }
-                    </div>}
+                    </SwipeableViews>
+                }
+
+                <Navbar state='home' />
             </div>
         );
     }

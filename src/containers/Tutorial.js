@@ -53,7 +53,8 @@ class Tutorial extends Component {
 
 						</ol>
 					</div>
-				<button className="bigbutton" data-name='home' onClick={this.handleClick}>
+				<button className="bigbutton end-tutorial" data-name='mood-picker' onClick={this.handleClick}>
+
 	                    Start Using Quotable!
 	            </button>
             </div>
