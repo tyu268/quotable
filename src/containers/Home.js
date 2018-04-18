@@ -129,7 +129,7 @@ class Home extends Component {
                 {
                     this.props.today
                     ? <QuoteModal handleClick={this.toggleBlur} />
-                    : <SwipeableViews containerStyle={styles.slideContainer} axis="y" resistance onChangeIndex={() => this.toggleBlur()}>
+                    : <SwipeableViews containerStyle={styles.slideContainer} axis="y" onChangeIndex={() => this.toggleBlur()}>
                         <div style={Object.assign({}, styles.slide1)}>
                             <QuoteModal handleClick={this.toggleBlur} />
                         </div>
