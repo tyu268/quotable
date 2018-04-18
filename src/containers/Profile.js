@@ -58,8 +58,8 @@ class Profile extends Component {
         return (
             <div>
                 <div className='profile-header'>
-                    <button data-name="photos" onClick={this.handleClick}>PHOTO HISTORY</button>
-                    <button data-name="emoji" onClick={this.handleClick}>EMOJI HISTORY</button>
+                    <button className={this.state.photoView ? 'cur-profile' : ''} data-name="photos" onClick={this.handleClick}>PHOTO HISTORY</button>
+                    <button className={this.state.photoView ? '' : 'cur-profile'} data-name="emoji" onClick={this.handleClick}>EMOJI HISTORY</button>
                 </div>
                 {   // Toggle between profile and emoji history views
                     this.state.photoView

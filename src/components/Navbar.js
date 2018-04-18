@@ -42,21 +42,18 @@ class Navbar extends Component {
             <div className='navbar'>
                 <div className={profileClass} data-name='profile' onClick={this.handleClick}>
                     <img
-                        className={screen === 'profile' ? 'cur-page' : ''}
                         data-name='profile'
                         src={photo_img}
                         alt='your profile' />
                 </div>
                 <div className={homeClass} data-name='home' onClick={this.handleClick}>
                     <img 
-                        className={screen === 'home' ? 'cur-page' : ''} 
                         data-name='home'
                         src={home} 
                         alt='home' />
                 </div>
                 <div className={exploreClass} data-name='explore' onClick={this.handleClick}>
                     <img
-                        className={screen === 'explore' ? 'cur-page' : ''}
                         data-name='explore'
                         src={grid}
                         alt='explore' />

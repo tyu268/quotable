@@ -11,11 +11,13 @@
 	border: none;
 	font-family: 'Open Sans Condensed', sans-serif;
 	color: #fff;
-	background-color: rgba(0, 0, 0, 0.7);
+	background-color: black;
+	opacity: 0.7;
 	min-width: 50%;
-	padding: 16px 32px;
+	padding: 15px 32px;
 	text-align: center;
 	font-size: 1em;
+    border-bottom: 2px solid grey;
 }
 
 .profile-header > button:focus {
@@ -24,4 +26,10 @@
 
 .photo-views {
 	margin: 3.5em 0 3em;
+}
+
+.cur-profile {
+	opacity: 1 !important;
+    border-bottom: 5px solid #FF357A !important;
+    padding-bottom: 11px !important;
 }
