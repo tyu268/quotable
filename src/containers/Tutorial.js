@@ -152,6 +152,7 @@ class Tutorial extends Component {
 						)}
 					>
 						<img style={styles.img} src={img.img} alt={img.alt}/>
+						<p>{img.text}</p>
 					</Animated.div>
 					);
 				})}	
