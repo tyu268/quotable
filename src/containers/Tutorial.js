@@ -5,6 +5,9 @@
  */
 
 import React, { Component } from 'react';
+import Slider from 'react-slick';
+import "../../node_modules/slick-carousel/slick/slick.css";
+import "../../node_modules/slick-carousel/slick/slick-theme.css";
 import SwipeableViews from 'react-swipeable-views';
 import Animated from 'animated/lib/targets/react-dom';
 
@@ -58,45 +61,14 @@ const tutorialImages = [
 	}
 ];
 
-const styles = {
-	root: {
-		background: '#000',
-		padding: '0 10%',
-	},
-	slide: {
-		alignItems: 'center',
-		justifyContent: 'center',
-		flexDirection: 'column',
-		display: 'flex',
-	},
-	img: {
-		width: '60%',
-		display: 'block',
-		margin: '0.5em 0',
-	},
-};
-
 class Tutorial extends Component {
     constructor(props) {
 		super(props);
 		this.state = {
-			index: 0,
-			position: new Animated.Value(0),
+			index: 0
 		};
         this.handleClick = this.handleClick.bind(this);
 	}
-
-	handleChangeIndex = index => {
-		this.setState({ index });
-	};
-
-	handleSwitch = (index, type) => {
-		if (type === 'end') {
-			Animated.spring(this.state.position, { toValue: index }).start();
-			return;
-		}
-		this.state.position.setValue(index);
-	};
 
     // Go to home screen
     handleClick(ev) {
@@ -105,6 +77,12 @@ class Tutorial extends Component {
 	
 	render() {
 		const { index, position } = this.state;
+		const settings = {
+			arrows: true,
+			dots: true,
+			infinite: false,
+			afterChange: index => this.setState({ index })
+		};
 
 		return (
 			<div className="tutorial-screen">
@@ -112,51 +90,17 @@ class Tutorial extends Component {
 					<img className="logo" src={logo} alt="Quotable Logo"/>
 					<span>Welcome to Quotable!</span>
 				</div>
-				<p>Swipe through for a quick overview!</p>
-				<SwipeableViews
-					className="tutorial-slider"
-					index={index}
-					onChangeIndex={this.handleChangeIndex}
-					onSwitching={this.handleSwitch}
-				>	
-					{tutorialImages.map((img, currentIndex) => {
-						const inputRange = tutorialImages.map((_, i) => i);
-						const scale = position.interpolate({
-							inputRange,
-							outputRange: inputRange.map(i => {
-								return currentIndex === i ? 1 : 0.7;
-							}),
-						});
-						const opacity = position.interpolate({
-							inputRange,
-							outputRange: inputRange.map(i => {
-								return currentIndex === i ? 1 : 0.3;
-							}),
-						});
-						const translateX = position.interpolate({
-							inputRange,
-							outputRange: inputRange.map(i => {
-								return 100 / 2 * (i - currentIndex);
-							}),
-						});
-
-					return (
-					<Animated.div
-						key={String(currentIndex)}
-						style={Object.assign(
-						{
-							opacity,
-							transform: [{ scale }, { translateX }],
-						},
-						styles.slide,
-						)}
-					>
-						<img style={styles.img} src={img.img} alt={img.alt}/>
-						<p>{img.text}</p>
-					</Animated.div>
-					);
-				})}	
-				</SwipeableViews>
+				<p>Swipe through for a quick overview >></p>
+				<Slider {...settings}>
+					{tutorialImages.map(item => {
+						return (
+							<div>
+								<img className="tutorial-image" src={item.img} alt={item.alt}/>
+								<p>{item.text}</p>
+							</div>
+						);
+					})}
+				</Slider>
 				{index === 6 &&
 				<button className="bigbutton" data-name='mood-picker' onClick={this.handleClick}>
 	                    Start Using Quotable!

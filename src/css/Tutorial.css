@@ -4,37 +4,39 @@
     width: 100%;
     height: 100%;
     box-sizing: border-box;
-    background: black;
-    display: flex;
-    justify-content: center;
-    flex-direction: column;
-    align-items: center;
+    background: #666666;
 }
 
 .tutorial-header {
     display: flex;
+    justify-content: center;
     align-items: center;
-    padding: 0.5em 0;
+    width: 90%;
+    margin: auto;
+    padding: 0.7em 0 1.5em;
 }
 
 .tutorial-header > span {
     margin: 0 0.5em;
-    font-size: 28px;
+    font-size: 32px;
 }
 
 .tutorial-image {
-    width: 100%;
+    width: 50%;
+    display: block;
+    margin: 0.5em auto;
 }
 
 .tutorial-slider {
     width: 100%;
     box-sizing: border-box;
+    border: 1px solid green;
     padding: 0 1em;
 }
 
 p {
     width: 72%;
-    margin-top: 0.2em;
+    margin: 0.2em auto auto auto;
     text-align: center;
     align-items: center;
 }
@@ -43,7 +45,9 @@ p {
 
 .bigbutton {
     position: fixed;
+    left: calc(50% - 125px);
     bottom: 0.8em;
+    width: 250px;
     padding: 0.5em 2.5em;
     text-align: center;
     font-family: 'Open Sans Condensed', sans-serif;
@@ -63,4 +67,18 @@ p {
 .logo {
     width: 50px;
     min-width: 10%;
+}
+
+.slick-arrow {
+    color: black;
+}
+
+.slick-prev {
+    z-index: 100;
+    left: 20px !important;
+}
+
+.slick-next {
+    z-index: 100;
+    right: 20px !important;
 }
