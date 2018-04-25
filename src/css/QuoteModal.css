@@ -13,6 +13,15 @@
     justify-content: center;
 }
 
+.quote-prompt-text {
+    text-transform: uppercase;
+    text-align: center;
+    color: white;
+    width: 75%;
+    min-width: 100px;
+    opacity: 1;
+}
+
 .quote-text {
     font-size: 1.7em;
     text-transform: uppercase;

@@ -16,6 +16,9 @@ class QuoteModal extends Component {
         return (
             <div>
                 <div className="quote-modal">
+                    <div className="quote-prompt-text">
+                        Today's Prompt:
+                    </div>
                     <div className="quote-text">
                         Negative thoughts stick around because we believe them, not because we want or choose them.
                     </div>
