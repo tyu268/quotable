@@ -8,8 +8,6 @@ import React, { Component } from 'react';
 import Slider from 'react-slick';
 import "../../node_modules/slick-carousel/slick/slick.css";
 import "../../node_modules/slick-carousel/slick/slick-theme.css";
-import SwipeableViews from 'react-swipeable-views';
-import Animated from 'animated/lib/targets/react-dom';
 
 import { connect } from 'react-redux'
 import { changeScreen } from '../actions'
@@ -76,7 +74,7 @@ class Tutorial extends Component {
     }
 	
 	render() {
-		const { index, position } = this.state;
+		const { index } = this.state;
 		const settings = {
 			arrows: true,
 			dots: true,
@@ -85,7 +83,7 @@ class Tutorial extends Component {
 		};
 
 		return (
-			<div className="tutorial-screen">
+			<div className="tutorial-screen" style={{height: window.innerHeight}}>
 				<div className="tutorial-header">
 					<img className="logo" src={logo} alt="Quotable Logo"/>
 					<span>Welcome to Quotable!</span>
