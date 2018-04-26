@@ -23,37 +23,26 @@ import logo from "../img/logo.png";
 
 const tutorialImages = [
 	{
-		text: "Choose how you're feeling today!",
 		img: emojiscreen,
 		alt: "Screen with list of emojis: happy, sad, angry, disgusted, pizza.",
 	},
 	{
-		text: "This is how you said you were feeling today! Tap on it to change.",
-		img: emojidisplay,
-		alt: "Emoji is displayed on top right home screen corner.",
-	},
-	{
-		text: "Take a photo inspired by the quote! We'll combine everyone's photos to make a cool wallpaper at the end of the day!",
 		img: quotescreen,
 		alt: "Quote text is in center of home screen.",
 	},
 	{
-		text: "This is how much time you have left to post.",
 		img: timescreen,
 		alt: "Clock with time left (e.g. X hours left!) is displayed underneath quote text.",
 	},
 	{
-		text: "See your photos, wallpapers, and past mood history here. Click on a photo to view and download!",
 		img: profilescreen,
 		alt: "Icon with two photos in the bottom left corner of home screen."
 	},
 	{
-		text: "See what other people have been posting!",
 		img: explorescreen,
 		alt: "Icon with a grid of nine squares in the bottom right corner of home screen.",
 	},
 	{
-		text: "Swipe up to launch the camera and get started!",
 		img: camerascreen,
 		alt: "Swipe up to access camera; icon located underneath time left in home screen.",
 	}
