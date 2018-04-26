@@ -41,14 +41,14 @@ class Profile extends Component {
     }
 
     // Enable user to open and close a single image by clicking on a photo
-    handleImageClick(img, text) {
+    handleImageClick(img, text, user) {
         if (this.state.image) {
             this.setState(prevState => {
                 return { image: null };
             });
         } else {
             this.setState(prevState => {
-                return { image: [img, text] };
+                return { image: [img, text, user] };
             });
         }
     }
@@ -78,7 +78,7 @@ class Profile extends Component {
                                     onClick={this.handleImageClick} />);
                             })}
                         </div>
-                        : <ImageView image={this.state.image} onClick={() => this.handleImageClick(null, null)}/>
+                        : <ImageView state='profile' image={this.state.image} onClick={() => this.handleImageClick(null, null, null)}/>
                     : <EmojiHistory />
                 }
                 <Navbar state='profile' />

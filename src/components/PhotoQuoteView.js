@@ -13,6 +13,11 @@ import '../css/PhotoQuoteView.css';
 
 class PhotoQuoteView extends Component {
     render() {
+        const user = {
+            username: 'cs179user',
+            time: this.props.date,
+            emoji: this.props.mood[0]
+        };
         return (
             <div className="pq-view">
                 <div className="pq-date">
@@ -27,7 +32,7 @@ class PhotoQuoteView extends Component {
                         <img
                             src={this.props.photo.img}
                             alt={this.props.photo.text}
-                            onClick={() => this.props.onClick(this.props.photo.img, this.props.photo.text)} />
+                            onClick={() => this.props.onClick(this.props.photo.img, this.props.photo.text, user)} />
                         <div className="image-footer">YOUR PHOTO</div>
                     </div>
                     <div className="pq-wallpaper">
@@ -36,7 +41,7 @@ class PhotoQuoteView extends Component {
                             alt={this.props.wallpaper.text}
                             onClick={() => {
                                 if (!this.props.wallpaper.placeholder)
-                                    this.props.onClick(this.props.wallpaper.img, this.props.wallpaper.text);
+                                    this.props.onClick(this.props.wallpaper.img, this.props.wallpaper.text, user);
                             }} />
                             <div className="image-footer">DAILY WALLPAPER</div>
                     </div>

@@ -35,19 +35,19 @@ class MoodPicker extends Component {
     render() {
         return (
                 <div className='mood-picker'>
-                            <div className='mood-expanded'>
-                                <h1> How are you feeling today? </h1>
-                                {/* Emotion list */}
-                                {
-                                    this.state.emotions.map(emotion => {
-                                        return (
-                                            <button key={emotion[1]} className='mood-btn' onClick={() => this.select_emotion(emotion)}>
-                                                <span role="img" aria-label={emotion[1]}>{emotion[0]}</span>
-                                            </button>
-                                        );
-                                    })
-                                }
-                            </div>
+                    <div className='mood-expanded'>
+                        <h1> How are you feeling today? </h1>
+                        {/* Emotion list */}
+                        {
+                            this.state.emotions.map(emotion => {
+                                return (
+                                    <button key={emotion[1]} className='mood-btn' onClick={() => this.select_emotion(emotion)}>
+                                        <span role="img" aria-label={emotion[1]}>{emotion[0]}</span>
+                                    </button>
+                                );
+                            })
+                        }
+                    </div>
                 </div>
 
         );

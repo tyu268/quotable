@@ -21,29 +21,73 @@ import housing2 from './img/housing2.jpg';
 import placeholder from './img/image-placeholder.png';
 
 // Photo arrays for explore and profile history
-const explore_temp = [{img: annenberg, text: 'annenberg'}, {img: gate, text: 'gate'}, {img: yard, text: 'yard'}, 
-	{img: matthews, text: 'matthews'}, {img: adams, text: 'adams'}, {img: square, text: 'square'}, {img: manny, text: 'manny'}, 
-    {img: housing, text: 'housing'}, {img: housing2, text: 'housing2'}];
+const explore_temp = [
+    {img: annenberg, text: 'annenberg', user: {
+        username: 'joyli97',
+        time: '15 minutes ago',
+        emoji: '😄'
+    }},
+    {img: gate, text: 'gate', user: {
+        username: 'tiffthefish',
+        time: '1 hour ago',
+        emoji: '🤢'
+    }},
+    {img: yard, text: 'yard', user: {
+        username: 'coolcat416',
+        time: '2 hours ago',
+        emoji: '😞'
+    }}, 
+    {img: matthews, text: 'matthews', user: {
+        username: 'xxx_philhuang_xxx',
+        time: '4 hours ago',
+        emoji: '😡'
+    }},
+    {img: adams, text: 'adams', user: {
+        username: 'penguin24',
+        time: '5 hours ago',
+        emoji: '😞'
+    }},
+    {img: square, text: 'square', user: {
+        username: 'thropstar',
+        time: '12 hours ago',
+        emoji: '😞'
+    }},
+    {img: manny, text: 'manny', user: {
+        username: 'happycat',
+        time: '12 hours ago',
+        emoji: '😄'
+    }}, 
+    {img: housing, text: 'housing', user: {
+        username: 'blobfish124',
+        time: '14 hours ago',
+        emoji: '😄'
+    }},
+    {img: housing2, text: 'housing2', user: {
+        username: 'goose',
+        time: '14 hours ago',
+        emoji: '🍕'
+    }}
+];
 const profileTemp = [
 {
     img: {img: square, text: 'square'},
     wallpaper: {img: starrynight, text: 'starrynight'},
     date: 'March 3, 2018',
-    quote: 'Go outside and take a breath',
+    quote: 'Go outside and take a breath.',
     mood: ['😄', 'happy'],
 },
 {
     img: {img: hall, text: 'hall'},
     wallpaper: {img: tiger, text: 'tiger'},
     date: 'March 2, 2018',
-    quote: 'Lorem ipsum whoo',
+    quote: 'When life shuts a door, just open it again.',
     mood: ['😡', 'angry'],
 },
 {
     img: {img: students, text: 'students'},
     wallpaper: {img: annenberg, text: 'annenberg'},
     date: 'March 1, 2018',
-    quote: 'lorem ipsum this is a quote',
+    quote: 'Everyday may not be good, but there is something good in every day.',
     mood: ['🤢', 'disgusted'],
 }]
 
@@ -77,7 +121,13 @@ function reducer(state = initialState, action) {
             let profile = JSON.parse(newState.profileHistory);
             let explore = JSON.parse(newState.explorePhotos);
             profile.splice(0, 0, newProfileImage);
-            explore.splice(0, 0, newProfileImage.img);
+            let exploreImg = {...newProfileImage.img};
+            exploreImg.user = {
+                username: 'cs179user',
+                time: 'now',
+                emoji: state.mood[0]
+            };
+            explore.splice(0, 0, exploreImg);
             newState.profileHistory = JSON.stringify(profile);
             newState.explorePhotos = JSON.stringify(explore);
             return newState;

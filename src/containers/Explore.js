@@ -15,8 +15,11 @@ class Explore extends Component {
     render() {
         return (
             <div>
-                <h1 className='explore-header'>TODAY'S SUBMISSIONS</h1>
-                <PhotoDisplay photos={this.props.photos} />
+                <div className='explore-header'>
+                    <h1 className='explore-header-text'>TODAY'S SUBMISSIONS:</h1>
+                    Negative thoughts stick around because we believe them, not because we want or choose them.
+                </div>
+                <PhotoDisplay state='explore' photos={this.props.photos} />
                 <Navbar state='explore' />
             </div>
         );

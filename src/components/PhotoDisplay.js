@@ -10,7 +10,7 @@ class PhotoDisplay extends Component {
         };
     }
 
-    handleClick(img, txt) {
+    handleClick(img, txt, userInfo) {
         if (this.state.image) {
             this.setState({
               image: null,
@@ -18,7 +18,7 @@ class PhotoDisplay extends Component {
         }
         else {
             this.setState({
-              image: [img, txt],
+              image: [img, txt, userInfo],
             });
         }
        
@@ -35,14 +35,16 @@ class PhotoDisplay extends Component {
         return (
             <div>
                 {!this.state.image
-                    ? <div id="photos">
+                    ? <div>
+                        <div id="photos">
                         {this.props.photos.map(p => {
                             return (<div className="photo-display" key={i++}>
-                                <img src={p.img} alt={p.text} onClick={() => this.handleClick(p.img, p.text)}/>
+                                <img src={p.img} alt={p.text} onClick={() => this.handleClick(p.img, p.text, p.user)}/>
                             </div>);
                         })}
                         </div>
-                    : <ImageView image={this.state.image} onClick={() => this.handleClick(null, null)}/>
+                    </div>
+                    : <ImageView state={this.props.state} image={this.state.image} onClick={() => this.handleClick(null, null, null)}/>
                 }
             </div>
         );

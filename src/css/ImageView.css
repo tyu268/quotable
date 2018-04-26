@@ -1,6 +1,6 @@
 .image {
-	width: 100%;
-    padding-bottom: 1em;
+    width: 100%;
+    padding-bottom: 0.2em;
 }
 
 .view-screen {
@@ -25,6 +25,18 @@
 .download-button:hover {
     background-color: #84E1D1;
     color: white;
+}
+
+.user-info {
+    color: black;
+    width: 100%;
+    box-sizing: border-box;
+    padding: 0.2em;
+    vertical-align: center;
+}
+
+.username {
+    margin: 0 0.2em;
 }
 
 .back-button {

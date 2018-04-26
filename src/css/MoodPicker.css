@@ -4,9 +4,10 @@
 
 .mood-btn {
     font-size: 2em;
-    background-color: Transparent;
-    border: none;
-    outline:none;
+    background-color: transparent;
+	border: none;
+	outline: none;
+	padding: 0;
 }
 
 .mood-expanded {
