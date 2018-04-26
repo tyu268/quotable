@@ -28,7 +28,11 @@ class ImageView extends Component {
                     </span>
                 </div>
 
-                <button className="download-button back-button" onClick={this.props.onClick}> 
+                <button
+                    className="download-button back-button"
+                    style={{marginBottom: (this.props.state === 'explore' ? '5em' : '1em')}}
+                    onClick={this.props.onClick}
+                > 
                         BACK
                 </button>
 
