@@ -95,6 +95,9 @@
 
 .photo-header > button {
     border: none;
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
     background-color: transparent;
     width: 1.2em;
     font-size: 1.2em;
