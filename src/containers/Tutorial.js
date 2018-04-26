@@ -13,7 +13,6 @@ import { connect } from 'react-redux'
 import { changeScreen } from '../actions'
 import '../css/Tutorial.css';
 import emojiscreen from "../img/emojiscreen.png";
-import emojidisplay from "../img/emojidisplay.png";
 import quotescreen from "../img/quotescreen.png";
 import timescreen from "../img/timescreen.png";
 import profilescreen from "../img/profilescreen.png";
@@ -88,7 +87,7 @@ class Tutorial extends Component {
 						);
 					})}
 				</Slider>
-				{index === 6 &&
+				{index === 5 &&
 				<button className="bigbutton" data-name='mood-picker' onClick={this.handleClick}>
 	                    Start Using Quotable!
 				</button>}

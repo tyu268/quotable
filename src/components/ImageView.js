@@ -10,7 +10,7 @@ import '../css/ImageView.css';
 class ImageView extends Component {
     render() {
         const user = this.props.image[2];
-        const margin = this.props.state == 'explore' ? '5.5em' : '3.2em';
+        const margin = this.props.state === 'explore' ? '5.5em' : '3.2em';
         return (
             <div className="view-screen">
                 <img 
